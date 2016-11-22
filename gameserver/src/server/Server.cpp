@@ -11,7 +11,7 @@
 namespace server
 {
     Server::Server()
-    :   log( "server" ),
+    :   log( "server.log" ),
         listenerThread( &Server::listen, this )
     {
     }

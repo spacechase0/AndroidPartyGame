@@ -5,7 +5,7 @@
 namespace client
 {
     Client::Client()
-    :   log( "client" )
+    :   log( "client.log" )
     {
     }
     
