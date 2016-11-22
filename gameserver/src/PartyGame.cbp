@@ -111,6 +111,10 @@
 		<Unit filename="Info.hpp" />
 		<Unit filename="Util.cpp" />
 		<Unit filename="Util.hpp" />
+		<Unit filename="client/Client.cpp">
+			<Option target="Client (Debug)" />
+			<Option target="Client (Release)" />
+		</Unit>
 		<Unit filename="client/Client.hpp">
 			<Option target="Client (Debug)" />
 			<Option target="Client (Release)" />
