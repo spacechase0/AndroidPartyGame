@@ -123,6 +123,14 @@
 			<Option target="Client (Debug)" />
 			<Option target="Client (Release)" />
 		</Unit>
+		<Unit filename="net/Connection.cpp" />
+		<Unit filename="net/Connection.hpp" />
+		<Unit filename="net/NetStage.cpp" />
+		<Unit filename="net/NetStage.hpp" />
+		<Unit filename="net/Packet.cpp" />
+		<Unit filename="net/Packet.hpp" />
+		<Unit filename="net/SimplePacket.cpp" />
+		<Unit filename="net/SimplePacket.hpp" />
 		<Unit filename="server/Client.hpp">
 			<Option target="Server (Debug)" />
 			<Option target="Server (Release)" />
