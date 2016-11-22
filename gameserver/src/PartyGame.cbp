@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="PartyGame" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Server (Debug)">
+				<Option output="../PartyServer_Debug" prefix_auto="1" extension_auto="1" />
+				<Option working_dir=".." />
+				<Option object_output="../obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add option="-lsc0-utility-d" />
+					<Add option="-lsfml-network-s-d" />
+					<Add option="-lsfml-system-s-d" />
+					<Add option="-lws2_32" />
+					<Add option="-lwinmm" />
+				</Linker>
+			</Target>
+			<Target title="Server (Release)">
+				<Option output="../PartyServer" prefix_auto="1" extension_auto="1" />
+				<Option working_dir=".." />
+				<Option object_output="../obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-lsc0-utility" />
+					<Add option="-lsfml-network-s" />
+					<Add option="-lsfml-system-s" />
+					<Add option="-lws2_32" />
+					<Add option="-lwinmm" />
+				</Linker>
+			</Target>
+			<Target title="Client (Debug)">
+				<Option output="../PartyClient_Debug" prefix_auto="1" extension_auto="1" />
+				<Option working_dir=".." />
+				<Option object_output="../obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add option="-lsc0-utility-d" />
+					<Add option="-lsfml-network-s-d" />
+					<Add option="-lsfml-graphics-s-d" />
+					<Add option="-lsfml-window-s-d" />
+					<Add option="-lsfml-audio-s-d" />
+					<Add option="-lsfml-system-s-d" />
+					<Add option="-lopengl32" />
+					<Add option="-lfreetype" />
+					<Add option="-ljpeg" />
+					<Add option="-lopenal32" />
+					<Add option="-lflac" />
+					<Add option="-lvorbisenc" />
+					<Add option="-lvorbisfile" />
+					<Add option="-lvorbis" />
+					<Add option="-logg" />
+					<Add option="-lgdi32" />
+					<Add option="-lws2_32" />
+					<Add option="-lwinmm" />
+				</Linker>
+			</Target>
+			<Target title="Client (Release)">
+				<Option output="../PartyClient" prefix_auto="1" extension_auto="1" />
+				<Option working_dir=".." />
+				<Option object_output="../obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-lsc0-utility" />
+					<Add option="-lsfml-network-s" />
+					<Add option="-lsfml-graphics-s" />
+					<Add option="-lsfml-window-s" />
+					<Add option="-lsfml-audio-s" />
+					<Add option="-lsfml-system-s" />
+					<Add option="-lopengl32" />
+					<Add option="-lfreetype" />
+					<Add option="-ljpeg" />
+					<Add option="-lopenal32" />
+					<Add option="-lflac" />
+					<Add option="-lvorbisenc" />
+					<Add option="-lvorbisfile" />
+					<Add option="-lvorbis" />
+					<Add option="-logg" />
+					<Add option="-lgdi32" />
+					<Add option="-lws2_32" />
+					<Add option="-lwinmm" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option='-include &quot;Info.hpp&quot;' />
+			<Add option="-DSFML_STATIC" />
+		</Compiler>
+		<Unit filename="Info.hpp" />
+		<Unit filename="Util.cpp" />
+		<Unit filename="Util.hpp" />
+		<Unit filename="client/Client.hpp">
+			<Option target="Client (Debug)" />
+			<Option target="Client (Release)" />
+		</Unit>
+		<Unit filename="client/main.cpp">
+			<Option target="Client (Debug)" />
+			<Option target="Client (Release)" />
+		</Unit>
+		<Unit filename="server/Client.hpp">
+			<Option target="Server (Debug)" />
+			<Option target="Server (Release)" />
+		</Unit>
+		<Unit filename="server/Match.hpp">
+			<Option target="Server (Debug)" />
+			<Option target="Server (Release)" />
+		</Unit>
+		<Unit filename="server/Server.cpp">
+			<Option target="Server (Debug)" />
+			<Option target="Server (Release)" />
+		</Unit>
+		<Unit filename="server/Server.hpp">
+			<Option target="Server (Debug)" />
+			<Option target="Server (Release)" />
+		</Unit>
+		<Unit filename="server/main.cpp">
+			<Option target="Server (Debug)" />
+			<Option target="Server (Release)" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
