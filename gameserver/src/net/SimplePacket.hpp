@@ -5,6 +5,12 @@
 
 namespace net
 {
+    /// Children will only have to implement:
+    ///     virtual std::size_t getSize() const
+    ///     virtual void read( std::istream& in )
+    ///     virtual void write( std::ostream& out )
+    /// Sadly things using strings (that aren't a fixed length)
+    /// Will have to do things staged.
     class SimplePacket : public Packet
     {
         public:
