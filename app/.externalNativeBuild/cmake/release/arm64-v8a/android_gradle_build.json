@@ -26,7 +26,7 @@
 					"workingDirectory" : "C:/Users/ronal/AndroidStudioProjects/KingdomParty/app/.externalNativeBuild/cmake/release/arm64-v8a"
 				}
 			],
-			"output" : "C:/Users/ronal/AndroidStudioProjects/KingdomParty/app/.externalNativeBuild/cmake/release/obj/arm64-v8a/libnative-lib.so",
+			"output" : "C:/Users/ronal/AndroidStudioProjects/KingdomParty/app/build/intermediates/cmake/release/obj/arm64-v8a/libnative-lib.so",
 			"toolchain" : "2518709857"
 		}
 	},

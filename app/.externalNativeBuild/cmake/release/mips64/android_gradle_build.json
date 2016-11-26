@@ -26,7 +26,7 @@
 					"workingDirectory" : "C:/Users/ronal/AndroidStudioProjects/KingdomParty/app/.externalNativeBuild/cmake/release/mips64"
 				}
 			],
-			"output" : "C:/Users/ronal/AndroidStudioProjects/KingdomParty/app/.externalNativeBuild/cmake/release/obj/mips64/libnative-lib.so",
+			"output" : "C:/Users/ronal/AndroidStudioProjects/KingdomParty/app/build/intermediates/cmake/release/obj/mips64/libnative-lib.so",
 			"toolchain" : "2518709857"
 		}
 	},

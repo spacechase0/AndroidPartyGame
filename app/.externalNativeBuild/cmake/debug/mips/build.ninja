@@ -46,9 +46,9 @@ build CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o: CXX_COMPILER__nat
 
 
 #############################################
-# Link the shared library ..\obj\mips\libnative-lib.so
+# Link the shared library ..\..\..\..\build\intermediates\cmake\debug\obj\mips\libnative-lib.so
 
-build ../obj/mips/libnative-lib.so: CXX_SHARED_LIBRARY_LINKER__native-lib CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o | C$:/Users/ronal/AppData/Local/Android/sdk/ndk-bundle/platforms/android-21/arch-mips/usr/lib/liblog.so
+build ../../../../build/intermediates/cmake/debug/obj/mips/libnative-lib.so: CXX_SHARED_LIBRARY_LINKER__native-lib CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o | C$:/Users/ronal/AppData/Local/Android/sdk/ndk-bundle/platforms/android-21/arch-mips/usr/lib/liblog.so
   LANGUAGE_COMPILE_FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info
   LINK_FLAGS = -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Wl,-z,noexecstack -Qunused-arguments -Wl,-z,relro -Wl,-z,now -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Wl,-z,noexecstack -Qunused-arguments -Wl,-z,relro -Wl,-z,now
   LINK_LIBRARIES = -llog -lm "C:/Users/ronal/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/mips/libgnustl_static.a"
@@ -57,7 +57,7 @@ build ../obj/mips/libnative-lib.so: CXX_SHARED_LIBRARY_LINKER__native-lib CMakeF
   PRE_LINK = cd .
   SONAME = libnative-lib.so
   SONAME_FLAG = -Wl,-soname,
-  TARGET_FILE = ..\obj\mips\libnative-lib.so
+  TARGET_FILE = ..\..\..\..\build\intermediates\cmake\debug\obj\mips\libnative-lib.so
   TARGET_PDB = native-lib.so.dbg
 
 #############################################
@@ -81,8 +81,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build libnative-lib.so: phony ../obj/mips/libnative-lib.so
-build native-lib: phony ../obj/mips/libnative-lib.so
+build libnative-lib.so: phony ../../../../build/intermediates/cmake/debug/obj/mips/libnative-lib.so
+build native-lib: phony ../../../../build/intermediates/cmake/debug/obj/mips/libnative-lib.so
 # =============================================================================
 # Folder targets.
 
@@ -94,7 +94,7 @@ build native-lib: phony ../obj/mips/libnative-lib.so
 #############################################
 # The main all target.
 
-build all: phony ../obj/mips/libnative-lib.so
+build all: phony ../../../../build/intermediates/cmake/debug/obj/mips/libnative-lib.so
 
 #############################################
 # Make the all target the default.
