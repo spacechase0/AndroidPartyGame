@@ -3,10 +3,11 @@
 #include <iostream>
 #include <memory>
 #include <SFML/Network/TcpSocket.hpp>
+#include <SFML/System/Lock.hpp>
 #include <SFML/System/Time.hpp>
 #include <SFML/System/Sleep.hpp>
 
-#include "net/Connection.hpp>
+#include "net/Connection.hpp"
 #include "server/Client.hpp"
 #include "server/Match.hpp"
 
@@ -28,7 +29,7 @@ namespace server
         
         while ( isRunning() )
         {
-            for ( Client& client : clients )
+            for ( auto& client : clients )
             {
             }
             
@@ -55,12 +56,16 @@ namespace server
         
         while ( isRunning() )
         {
-            auto conn = std::make_unique< net::Connection >();
-            if ( listener.accept( conn.socket ) != sf::Socket::Done )
+            std::unique_ptr< net::Connection > conn( new net::Connection() );
+            if ( listener.accept( conn->socket ) != sf::Socket::Done )
                 continue;
             
             log( "[INFO] New connection.\n" );
-            // TODO: Add client
+            std::unique_ptr< Client > client( new Client( * this ) );
+            client->conn = std::move( conn );
+            
+            sf::Lock lock( clientsM );
+            clients.push_back( std::move( client ) );
         }
     }
 }

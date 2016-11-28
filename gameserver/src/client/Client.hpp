@@ -4,6 +4,8 @@
 #include <SFML/Network/TcpSocket.hpp>
 #include <util/Logger.hpp>
 
+#include "net/Connection.hpp"
+
 namespace client
 {
     class Client
@@ -15,10 +17,10 @@ namespace client
             
             bool connect();
             
-            inline bool isConnected() const { return socket.getLocalPort() != 0; }
+            inline bool isConnected() const { return conn.socket.getLocalPort() != 0; }
         
         private:
-            sf::TcpSocket socket;
+            net::Connection conn;
     };
 }
 

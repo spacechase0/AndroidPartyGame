@@ -28,7 +28,7 @@ namespace server
             bool running = true;
             
             sf::Mutex clientsM;
-            std::list< Client > clients;
+            std::list< std::unique_ptr< Client > > clients;
             
             std::list< Match > matches;
             

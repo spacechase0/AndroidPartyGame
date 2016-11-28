@@ -131,6 +131,7 @@
 		<Unit filename="net/Packet.hpp" />
 		<Unit filename="net/SimplePacket.cpp" />
 		<Unit filename="net/SimplePacket.hpp" />
+		<Unit filename="server/Client.cpp" />
 		<Unit filename="server/Client.hpp">
 			<Option target="Server (Debug)" />
 			<Option target="Server (Release)" />
