@@ -31,6 +31,7 @@ namespace server
         {
             for ( auto& client : clients )
             {
+                client->update();
             }
             
             sf::sleep( sf::milliseconds( 10 ) );
@@ -59,6 +60,7 @@ namespace server
             std::unique_ptr< net::Connection > conn( new net::Connection() );
             if ( listener.accept( conn->socket ) != sf::Socket::Done )
                 continue;
+            conn->socket.setBlocking( false );
             
             log( "[INFO] New connection.\n" );
             std::unique_ptr< Client > client( new Client( * this ) );

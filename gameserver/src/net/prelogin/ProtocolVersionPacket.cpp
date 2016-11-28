@@ -11,7 +11,7 @@ namespace net
         {
         }
         
-        void ProtocolVersionPacket::write( std::ostream& out )
+        void ProtocolVersionPacket::write( std::ostream& out ) const
         {
             out << version;
         }

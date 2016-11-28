@@ -7,6 +7,10 @@ namespace net
 {
     namespace prelogin
     {
+        /// This packet MUST maintain the same format across protocol versions.
+        /// Client -> Server: Send the protocol version we are using to ensure compatibility
+        /// Server -> Client: Send the appropriate version (so they know who is out of date),
+        ///                   and then disconnect then.               
         class ProtocolVersionPacket : public net::SimplePacket
         {
             public:
@@ -14,7 +18,7 @@ namespace net
                 
                 sf::Uint16 version = PROTOCOL_VERSION;
                 
-                virtual void write( std::ostream& out ) override;
+                virtual void write( std::ostream& out ) const override;
             
             protected:
                 virtual std::size_t getSize() const override;

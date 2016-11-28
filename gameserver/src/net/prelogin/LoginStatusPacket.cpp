@@ -11,7 +11,7 @@ namespace net
         {
         }
         
-        void LoginStatusPacket::write( std::ostream& out )
+        void LoginStatusPacket::write( std::ostream& out ) const
         {
             out << status;
         }

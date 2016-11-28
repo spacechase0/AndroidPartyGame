@@ -17,8 +17,10 @@ namespace client
             util::Logger log;
             
             bool connect();
-            
+            void disconnect();
             inline bool isConnected() const { return conn.socket.getLocalPort() != 0; }
+            
+            void send( const net::Packet* packet );
         
         private:
             net::Connection conn;

@@ -49,7 +49,7 @@ namespace net
             ++readStage;
         }
         
-        void RegisterPacket::write( std::ostream& out )
+        void RegisterPacket::write( std::ostream& out ) const
         {
             sf::Uint16 userLen = static_cast< sf::Uint16 >( username.length() );
             sf::Uint16 passLen = static_cast< sf::Uint16 >( password.length() );

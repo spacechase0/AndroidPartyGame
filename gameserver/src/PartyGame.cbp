@@ -123,6 +123,14 @@
 			<Option target="Client (Debug)" />
 			<Option target="Client (Release)" />
 		</Unit>
+		<Unit filename="client/prelogin/NetStage.cpp">
+			<Option target="Client (Debug)" />
+			<Option target="Client (Release)" />
+		</Unit>
+		<Unit filename="client/prelogin/NetStage.hpp">
+			<Option target="Client (Debug)" />
+			<Option target="Client (Release)" />
+		</Unit>
 		<Unit filename="net/Connection.cpp" />
 		<Unit filename="net/Connection.hpp" />
 		<Unit filename="net/NetStage.cpp" />
@@ -131,13 +139,18 @@
 		<Unit filename="net/Packet.hpp" />
 		<Unit filename="net/SimplePacket.cpp" />
 		<Unit filename="net/SimplePacket.hpp" />
+		<Unit filename="net/prelogin/LoginPacket.cpp" />
+		<Unit filename="net/prelogin/LoginPacket.hpp" />
 		<Unit filename="net/prelogin/LoginStatusPacket.cpp" />
 		<Unit filename="net/prelogin/LoginStatusPacket.hpp" />
 		<Unit filename="net/prelogin/NetStage.cpp" />
 		<Unit filename="net/prelogin/NetStage.hpp" />
 		<Unit filename="net/prelogin/PacketId.hpp" />
+		<Unit filename="net/prelogin/Packets.hpp" />
 		<Unit filename="net/prelogin/ProtocolVersionPacket.cpp" />
 		<Unit filename="net/prelogin/ProtocolVersionPacket.hpp" />
+		<Unit filename="net/prelogin/RegisterPacket.cpp" />
+		<Unit filename="net/prelogin/RegisterPacket.hpp" />
 		<Unit filename="server/Client.cpp">
 			<Option target="Server (Debug)" />
 			<Option target="Server (Release)" />

@@ -21,7 +21,7 @@ namespace net
                 Lobby,
                 Game,
             };
-            typedef std::function< void ( Packet* ) > PacketHandler;
+            typedef std::function< void ( const Packet* ) > PacketHandler;
             
             virtual ~NetStage();
             

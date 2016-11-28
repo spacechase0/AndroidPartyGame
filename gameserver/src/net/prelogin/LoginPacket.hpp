@@ -17,7 +17,7 @@ namespace net
                 virtual std::size_t getCurrentReadStageSize() const override;
                 virtual void doReadStage( std::istream& in ) override;
                 
-                virtual void write( std::ostream& out ) override;
+                virtual void write( std::ostream& out ) const override;
                 
                 std::string username;
                 std::string password;

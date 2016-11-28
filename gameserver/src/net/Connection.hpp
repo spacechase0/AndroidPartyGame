@@ -10,10 +10,12 @@ namespace client { class Client; }
 
 namespace net
 {
+    class Packet;
+    
     class Connection
     {
         public:
-            void update(); // Call when data is available (SocketSelector)
+            void update();
             
             inline bool isConnected() { return socket.getLocalPort() == 0; }
             
@@ -30,12 +32,17 @@ namespace net
                 return t;
             }
             
-            /// TODO SEND
+            void write( void* data, std::size_t amount );
+            
+            // I don't feel like this belongs here since reading packets is in NetStage
+            // But it's kinda clunky in NetStage as well. :/
+            void write( const Packet* packet );
         
         private:
             sf::TcpSocket socket;
-            std::stringstream buffer;
-            std::size_t currBufferSize = 0;
+            std::stringstream recvBuffer;
+            std::size_t recvBufferSize = 0;
+            std::string sendBuffer;
             
             friend class server::Server;
             friend class client::Client;

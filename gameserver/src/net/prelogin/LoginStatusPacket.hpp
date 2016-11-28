@@ -19,7 +19,7 @@ namespace net
                     LoginSuccessful,
                 } status;
                 
-                virtual void write( std::ostream& out ) override;
+                virtual void write( std::ostream& out ) const override;
             
             protected:
                 virtual std::size_t getSize() const override;

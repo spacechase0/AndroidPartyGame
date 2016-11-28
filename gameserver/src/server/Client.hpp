@@ -7,6 +7,7 @@ namespace net
 {
     class Connection;
     class NetStage;
+    class Packet;
 }
 
 namespace server
@@ -17,6 +18,10 @@ namespace server
         public:
             Client( Server& theServer );
             ~Client();
+            
+            void update();
+            
+            void send( const net::Packet* packet );
         
         private:
             Server& server;

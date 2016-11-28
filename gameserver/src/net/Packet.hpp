@@ -23,7 +23,7 @@ namespace net
             virtual std::size_t getCurrentReadStageSize() const = 0;
             virtual void doReadStage( std::istream& in ) = 0;
             
-            virtual void write( std::ostream& out ) = 0;
+            virtual void write( std::ostream& out ) const = 0;
     };
 }
 

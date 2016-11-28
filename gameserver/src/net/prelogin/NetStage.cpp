@@ -1,10 +1,7 @@
 #include "net/prelogin/NetStage.hpp"
 
 #include "net/prelogin/PacketId.hpp"
-#include "net/prelogin/ProtocolVersionPacket.hpp"
-#include "net/prelogin/RegisterPacket.hpp"
-#include "net/prelogin/LoginPacket.hpp"
-#include "net/prelogin/LoginStatusPacket.hpp"
+#include "net/prelogin/Packets.hpp"
 
 namespace net
 {
@@ -16,11 +13,10 @@ namespace net
             switch ( id )
             {
                 case PacketId::ProtocolVersion: ret.reset( new ProtocolVersionPacket() ); break;
-                case PacketId::Register:        ret.reset( new RegisterPacket() ); break;
-                case PacketId::Login:           ret.reset( new LoginPacket() ); break;
-                case PacketId::LoginStatus:     ret.reset( new LoginStatusPacket() ); break;
+                case PacketId::Register:        ret.reset( new RegisterPacket()        ); break;
+                case PacketId::Login:           ret.reset( new LoginPacket()           ); break;
+                case PacketId::LoginStatus:     ret.reset( new LoginStatusPacket()     ); break;
             }
-            
             return ret;
         }
     }
