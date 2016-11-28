@@ -10,16 +10,16 @@ namespace net
     ///     virtual void read( std::istream& in )
     ///     virtual void write( std::ostream& out )
     /// Sadly things using strings (that aren't a fixed length)
-    /// Will have to do things staged.
+    /// will have to do things staged.
     class SimplePacket : public Packet
     {
         public:
             using Packet::Packet;
             
-            virtual unsigned int getCurrentReadStage() const ;
-            virtual unsigned int getReadStageCount() const;
-            virtual std::size_t getCurrentReadStageSize() const;
-            virtual void doReadStage( std::istream& in );
+            virtual unsigned int getCurrentReadStage() const override;
+            virtual unsigned int getReadStageCount() const override;
+            virtual std::size_t getCurrentReadStageSize() const override;
+            virtual void doReadStage( std::istream& in ) override;
             
         protected:
             virtual std::size_t getSize() const = 0;

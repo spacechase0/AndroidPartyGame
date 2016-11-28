@@ -131,7 +131,17 @@
 		<Unit filename="net/Packet.hpp" />
 		<Unit filename="net/SimplePacket.cpp" />
 		<Unit filename="net/SimplePacket.hpp" />
-		<Unit filename="server/Client.cpp" />
+		<Unit filename="net/prelogin/LoginStatusPacket.cpp" />
+		<Unit filename="net/prelogin/LoginStatusPacket.hpp" />
+		<Unit filename="net/prelogin/NetStage.cpp" />
+		<Unit filename="net/prelogin/NetStage.hpp" />
+		<Unit filename="net/prelogin/PacketId.hpp" />
+		<Unit filename="net/prelogin/ProtocolVersionPacket.cpp" />
+		<Unit filename="net/prelogin/ProtocolVersionPacket.hpp" />
+		<Unit filename="server/Client.cpp">
+			<Option target="Server (Debug)" />
+			<Option target="Server (Release)" />
+		</Unit>
 		<Unit filename="server/Client.hpp">
 			<Option target="Server (Debug)" />
 			<Option target="Server (Release)" />

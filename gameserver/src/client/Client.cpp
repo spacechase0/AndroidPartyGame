@@ -11,6 +11,12 @@ namespace client
     
     bool Client::connect()
     {
-        return conn.socket.connect( sf::IpAddress( GAME_IP ), GAME_PORT ) == sf::Socket::Done;
+        auto status = conn.socket.connect( sf::IpAddress( GAME_IP ), GAME_PORT );
+        if ( status != sf::Socket::Done ) return false;
+        
+        // set netstage
+        // send protocol version
+        
+        return true;
     }
 }

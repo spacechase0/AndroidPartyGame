@@ -5,6 +5,7 @@
 #include <util/Logger.hpp>
 
 #include "net/Connection.hpp"
+#include "net/NetStage.hpp"
 
 namespace client
 {
@@ -21,6 +22,7 @@ namespace client
         
         private:
             net::Connection conn;
+            std::unique_ptr< net::NetStage > stage;
     };
 }
 
