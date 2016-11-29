@@ -13,6 +13,7 @@ namespace net
         {
             public:
                 LoginPacket();
+                LoginPacket( const std::string& user, const std::string& pass );
                 
                 virtual void read( Buffer& buffer ) override;
                 virtual void write( Buffer& buffer ) const override;

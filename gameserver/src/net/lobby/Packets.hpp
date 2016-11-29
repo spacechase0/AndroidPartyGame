@@ -1,0 +1,6 @@
+#ifndef NET_LOBBY_PACKETS_HPP
+#define NET_LOBBY_PACKETS_HPP
+
+// 
+
+#endif // NET_LOBBY_PACKETS_HPP

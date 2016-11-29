@@ -8,7 +8,13 @@ namespace net
     namespace prelogin
     {
         LoginStatusPacket::LoginStatusPacket()
-        :   Packet( PacketId::LoginStatus )
+        :   LoginStatusPacket( LoginStatusCode::NONE )
+        {
+        }
+        
+        LoginStatusPacket::LoginStatusPacket( LoginStatusCode theStatus )
+        :   Packet( PacketId::LoginStatus ),
+            status( theStatus )
         {
         }
     
@@ -16,12 +22,12 @@ namespace net
         {
             sf::Uint8 tmp;
             buffer >> tmp;
-            status = static_cast< Status >( tmp );
+            status = static_cast< LoginStatusCode >( tmp );
         }
         
         void LoginStatusPacket::write( Buffer& buffer ) const
         {
-            buffer << status;
+            buffer << static_cast< sf::Uint8 >( status );
         }
     }
 }

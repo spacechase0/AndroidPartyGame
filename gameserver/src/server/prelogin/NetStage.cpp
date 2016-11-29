@@ -1,6 +1,8 @@
 #include "server/prelogin/NetStage.hpp"
 
 #include "server/Client.hpp"
+#include "server/IUserDatabase.hpp"
+#include "server/lobby/NetStage.hpp"
 #include "server/Server.hpp"
 #include "net/prelogin/PacketId.hpp"
 #include "net/prelogin/Packets.hpp"
@@ -28,7 +30,7 @@ namespace server
             auto ver = static_cast< const ProtocolVersionPacket* >( packet );
             if ( ver->version != PROTOCOL_VERSION )
             {
-                server.log( "[INFO] Client protocol version didn't match. Client sent %i. (We're on %i.)\n", ver->version, PROTOCOL_VERSION );
+                server.log( "[INFO] Client protocol version didn't match. Client sent $. (We're on $.)\n", ver->version, PROTOCOL_VERSION );
                 client.send( new ProtocolVersionPacket() );
                 client.disconnect();
                 return;
@@ -39,16 +41,32 @@ namespace server
         void NetStage::handleRegister( const net::Packet* packet )
         {
             auto reg = static_cast< const RegisterPacket* >( packet );
-            server.log( "[INFO] Client registered as %s.\n", reg->username );
-            // TODO: Register
+            
+            std::string username = reg->username;
+            server.users->registerUser( reg->username, reg->password,
+            [ this, username ]( net::prelogin::LoginStatusCode status )
+            {
+                if ( status == net::prelogin::LoginStatusCode::RegisterSuccessful )
+                    server.log( "[INFO] Client registered as $.\n", username );
+                client.send( new LoginStatusPacket( status ) );
+            } );
         }
         
         void NetStage::handleLogin( const net::Packet* packet )
         {
             auto login = static_cast< const LoginPacket* >( packet );
-            server.log( "[INFO] Client attempting to login as %s.\n", login->username );
-            // TODO: Login
-            // TODO: Send login status
+            
+            std::string username = login->username;
+            server.users->checkLogin( login->username, login->password,
+            [ this, username ]( net::prelogin::LoginStatusCode status )
+            {
+                if ( status == net::prelogin::LoginStatusCode::LoginSuccessful )
+                {
+                    server.log( "[INFO] Client logged in as $.\n", username );
+                    client.setNetStage( std::unique_ptr< net::NetStage >( new server::lobby::NetStage( server, client, conn ) ) );
+                }
+                client.send( new LoginStatusPacket( status ) );
+            } );
         }
     }
 }

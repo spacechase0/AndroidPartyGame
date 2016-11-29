@@ -119,6 +119,14 @@
 			<Option target="Client (Debug)" />
 			<Option target="Client (Release)" />
 		</Unit>
+		<Unit filename="client/lobby/NetStage.cpp">
+			<Option target="Client (Debug)" />
+			<Option target="Client (Release)" />
+		</Unit>
+		<Unit filename="client/lobby/NetStage.hpp">
+			<Option target="Client (Debug)" />
+			<Option target="Client (Release)" />
+		</Unit>
 		<Unit filename="client/main.cpp">
 			<Option target="Client (Debug)" />
 			<Option target="Client (Release)" />
@@ -139,8 +147,13 @@
 		<Unit filename="net/NetStage.hpp" />
 		<Unit filename="net/Packet.cpp" />
 		<Unit filename="net/Packet.hpp" />
+		<Unit filename="net/lobby/NetStage.cpp" />
+		<Unit filename="net/lobby/NetStage.hpp" />
+		<Unit filename="net/lobby/PacketId.hpp" />
+		<Unit filename="net/lobby/Packets.hpp" />
 		<Unit filename="net/prelogin/LoginPacket.cpp" />
 		<Unit filename="net/prelogin/LoginPacket.hpp" />
+		<Unit filename="net/prelogin/LoginStatusCode.hpp" />
 		<Unit filename="net/prelogin/LoginStatusPacket.cpp" />
 		<Unit filename="net/prelogin/LoginStatusPacket.hpp" />
 		<Unit filename="net/prelogin/NetStage.cpp" />
@@ -159,6 +172,22 @@
 			<Option target="Server (Debug)" />
 			<Option target="Server (Release)" />
 		</Unit>
+		<Unit filename="server/DummyUserDatabase.cpp">
+			<Option target="Server (Debug)" />
+			<Option target="Server (Release)" />
+		</Unit>
+		<Unit filename="server/DummyUserDatabase.hpp">
+			<Option target="Server (Debug)" />
+			<Option target="Server (Release)" />
+		</Unit>
+		<Unit filename="server/IUserDatabase.cpp">
+			<Option target="Server (Debug)" />
+			<Option target="Server (Release)" />
+		</Unit>
+		<Unit filename="server/IUserDatabase.hpp">
+			<Option target="Server (Debug)" />
+			<Option target="Server (Release)" />
+		</Unit>
 		<Unit filename="server/Match.hpp">
 			<Option target="Server (Debug)" />
 			<Option target="Server (Release)" />
@@ -168,6 +197,14 @@
 			<Option target="Server (Release)" />
 		</Unit>
 		<Unit filename="server/Server.hpp">
+			<Option target="Server (Debug)" />
+			<Option target="Server (Release)" />
+		</Unit>
+		<Unit filename="server/lobby/NetStage.cpp">
+			<Option target="Server (Debug)" />
+			<Option target="Server (Release)" />
+		</Unit>
+		<Unit filename="server/lobby/NetStage.hpp">
 			<Option target="Server (Debug)" />
 			<Option target="Server (Release)" />
 		</Unit>

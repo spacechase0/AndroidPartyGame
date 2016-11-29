@@ -2,6 +2,7 @@
 #define NET_PRELOGIN_LOGINSTATUSPACKET_HPP
 
 #include "net/Packet.hpp"
+#include "net/prelogin/LoginStatusCode.hpp"
 
 namespace net
 {
@@ -11,16 +12,12 @@ namespace net
         {
             public:
                 LoginStatusPacket();
+                LoginStatusPacket( LoginStatusCode theStatus );
                 
                 virtual void read( Buffer& buffer ) override;
                 virtual void write( Buffer& buffer ) const override;
                 
-                enum Status : sf::Uint8
-                {
-                    NoSuchUser,
-                    LoginFailed,
-                    LoginSuccessful,
-                } status;
+                LoginStatusCode status;
         };
     }
 }

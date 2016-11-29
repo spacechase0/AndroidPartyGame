@@ -33,10 +33,11 @@ namespace net
             void send( const Packet* packet );
         
         protected:
-            virtual std::unique_ptr< Packet > getPacketFromId( Packet::Id id ) const = 0;
-            
-        private:
             Connection& conn;
+            
+            virtual std::unique_ptr< Packet > getPacketFromId( Packet::Id id ) const = 0;
+        
+        private:
             std::map< Packet::Id, PacketHandler > handlers;
             std::unique_ptr< Packet > pending;
             Packet::Length pendingLen;

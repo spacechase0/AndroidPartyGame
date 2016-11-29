@@ -8,12 +8,14 @@
 
 #include "net/Connection.hpp"
 #include "server/Client.hpp"
+#include "server/DummyUserDatabase.hpp"
 #include "server/Match.hpp"
 
 namespace server
 {
     Server::Server()
     :   log( "server.log" ),
+        users( new DummyUserDatabase() ),
         listenerThread( &Server::listen, this )
     {
     }
@@ -43,6 +45,7 @@ namespace server
                     else ++it;
                 }
             }
+            users->update();
             
             sf::sleep( sf::milliseconds( 10 ) );
         }

@@ -8,7 +8,14 @@ namespace net
     namespace prelogin
     {
         LoginPacket::LoginPacket()
-        :   Packet( PacketId::Login )
+        :   LoginPacket( "", "" )
+        {
+        }
+        
+        LoginPacket::LoginPacket( const std::string& user, const std::string& pass )
+        :   Packet( PacketId::Login ),
+            username( user ),
+            password( pass )
         {
         }
         

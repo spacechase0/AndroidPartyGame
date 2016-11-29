@@ -16,15 +16,23 @@ namespace client
             
             util::Logger log;
             
+            void update();
+            
             bool connect();
             void disconnect();
             inline bool isConnected() const { return conn.socket.getLocalPort() != 0; }
             
             void send( const net::Packet* packet );
+            
+            std::function< void () > onStageChange;
+            net::NetStage* getNetStage();
+            const net::NetStage* getNetStage() const;
+            void setNetStage( std::unique_ptr< net::NetStage > theStage );
         
         private:
             net::Connection conn;
             std::unique_ptr< net::NetStage > stage;
+            std::unique_ptr< net::NetStage > pendingStage;
     };
 }
 

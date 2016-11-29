@@ -10,6 +10,7 @@
 namespace server
 {
     class Client;
+    class IUserDatabase;
     class Match;
     
     class Server
@@ -19,6 +20,7 @@ namespace server
             ~Server();
             
             util::Logger log;
+            std::unique_ptr< IUserDatabase > users;
             
             void run();
             void stop();
@@ -29,6 +31,8 @@ namespace server
             
             sf::Mutex clientsM;
             std::list< std::unique_ptr< Client > > clients;
+            
+            Lobby lobby;
             
             std::list< Match > matches;
             
