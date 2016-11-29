@@ -1,5 +1,6 @@
 #include "net/prelogin/LoginStatusPacket.hpp"
 
+#include "net/Buffer.hpp"
 #include "net/prelogin/PacketId.hpp"
 
 namespace net
@@ -7,25 +8,20 @@ namespace net
     namespace prelogin
     {
         LoginStatusPacket::LoginStatusPacket()
-        :   SimplePacket( PacketId::LoginStatus )
+        :   Packet( PacketId::LoginStatus )
         {
-        }
-        
-        void LoginStatusPacket::write( std::ostream& out ) const
-        {
-            out << status;
         }
     
-        std::size_t LoginStatusPacket::getSize() const
-        {
-            return sizeof( status );
-        }
-
-        void LoginStatusPacket::read( std::istream& in )
+        void LoginStatusPacket::read( Buffer& buffer )
         {
             sf::Uint8 tmp;
-            in >> tmp;
+            buffer >> tmp;
             status = static_cast< Status >( tmp );
+        }
+        
+        void LoginStatusPacket::write( Buffer& buffer ) const
+        {
+            buffer << status;
         }
     }
 }

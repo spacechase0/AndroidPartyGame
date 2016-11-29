@@ -17,7 +17,8 @@ namespace net
         public:
             void update();
             
-            inline bool isConnected() { return socket.getLocalPort() == 0; }
+            void disconnect();
+            inline bool isConnected() { return socket.getLocalPort() != 0; }
             
             std::size_t available() const;
             std::size_t read( void* data, std::size_t amount );
@@ -33,10 +34,6 @@ namespace net
             }
             
             void write( void* data, std::size_t amount );
-            
-            // I don't feel like this belongs here since reading packets is in NetStage
-            // But it's kinda clunky in NetStage as well. :/
-            void write( const Packet* packet );
         
         private:
             sf::TcpSocket socket;

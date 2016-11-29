@@ -10,6 +10,8 @@ namespace net
         class NetStage : public net::NetStage
         {
             protected:
+                using net::NetStage::NetStage;
+                
                 virtual std::unique_ptr< Packet > getPacketFromId( Packet::Id id ) const;
         };
     }

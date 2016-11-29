@@ -20,9 +20,14 @@ int main()
         std::string cmd;
         std::cout << "> ";
         std::getline( std::cin, cmd );
+        if ( cmd == "" || cmd == " " ) continue;
         
         auto parsed = parseCommand( cmd );
         if ( parsed[ 0 ] == "stop" || parsed[ 0 ] == "quit" || parsed[ 0 ] == "exit" )
             s.stop();
+        else
+        {
+            std::cout << util::format( "Command '$' not recognized.\n", parsed[ 0 ] );
+        }
     }
 }

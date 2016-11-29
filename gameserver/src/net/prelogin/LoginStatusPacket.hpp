@@ -1,16 +1,19 @@
 #ifndef NET_PRELOGIN_LOGINSTATUSPACKET_HPP
 #define NET_PRELOGIN_LOGINSTATUSPACKET_HPP
 
-#include "net/SimplePacket.hpp"
+#include "net/Packet.hpp"
 
 namespace net
 {
     namespace prelogin
     {
-        class LoginStatusPacket : public net::SimplePacket
+        class LoginStatusPacket : public Packet
         {
             public:
                 LoginStatusPacket();
+                
+                virtual void read( Buffer& buffer ) override;
+                virtual void write( Buffer& buffer ) const override;
                 
                 enum Status : sf::Uint8
                 {
@@ -18,12 +21,6 @@ namespace net
                     LoginFailed,
                     LoginSuccessful,
                 } status;
-                
-                virtual void write( std::ostream& out ) const override;
-            
-            protected:
-                virtual std::size_t getSize() const override;
-                virtual void read( std::istream& in ) override;
         };
     }
 }

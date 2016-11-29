@@ -23,16 +23,20 @@ namespace net
             };
             typedef std::function< void ( const Packet* ) > PacketHandler;
             
+            NetStage( Connection& theConn );
             virtual ~NetStage();
             
-            void update( Connection& conn );
+            void update();
             
             void addHandler( Packet::Id id, PacketHandler&& handler );
+            
+            void send( const Packet* packet );
         
         protected:
             virtual std::unique_ptr< Packet > getPacketFromId( Packet::Id id ) const = 0;
             
         private:
+            Connection& conn;
             std::map< Packet::Id, PacketHandler > handlers;
             std::unique_ptr< Packet > pending;
             Packet::Length pendingLen;

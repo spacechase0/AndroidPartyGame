@@ -17,7 +17,7 @@ namespace client
         auto status = conn.socket.connect( sf::IpAddress( GAME_IP ), GAME_PORT );
         if ( status != sf::Socket::Done ) return false;
         
-        stage.reset( new client::prelogin::NetStage( * this ) );
+        stage.reset( new client::prelogin::NetStage( ( * this ), conn ) );
         send( new net::prelogin::ProtocolVersionPacket() );
         
         return true;
@@ -30,6 +30,7 @@ namespace client
     
     void Client::send( const net::Packet* packet )
     {
-        conn.write( packet );
+        log("Sending packet $\n", (int)packet->id);
+        stage->send( packet );
     }
 }

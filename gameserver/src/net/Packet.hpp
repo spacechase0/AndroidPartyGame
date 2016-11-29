@@ -2,11 +2,12 @@
 #define NET_PACKET_HPP
 
 #include <cstddef>
-#include <iostream>
 #include <SFML/Config.hpp>
 
 namespace net
 {
+    class Buffer;
+    
     class Packet
     {
         public:
@@ -18,12 +19,8 @@ namespace net
             
             const Id id;
             
-            virtual unsigned int getCurrentReadStage() const = 0;
-            virtual unsigned int getReadStageCount() const = 0;
-            virtual std::size_t getCurrentReadStageSize() const = 0;
-            virtual void doReadStage( std::istream& in ) = 0;
-            
-            virtual void write( std::ostream& out ) const = 0;
+            virtual void read( Buffer& buffer ) = 0;
+            virtual void write( Buffer& buffer ) const = 0;
     };
 }
 

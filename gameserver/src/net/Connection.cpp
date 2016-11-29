@@ -9,21 +9,38 @@ namespace net
         char tmpBuffer[ RECV_BUFFER_SIZE ];
         
         std::size_t received = 0;
-        if ( socket.receive( tmpBuffer, RECV_BUFFER_SIZE, received ) == sf::Socket::Done )
+        auto status = socket.receive( tmpBuffer, RECV_BUFFER_SIZE, received );
+        if ( status == sf::Socket::Done )
         {
             recvBuffer.write( tmpBuffer, received );
             recvBufferSize += received;
+        }
+        else if ( status == sf::Socket::Disconnected )
+        {
+            // Needed to make getLocalPort() return correctly
+            socket.disconnect();
+            return;
         }
         
         if ( sendBuffer.length() > 0 )
         {
             std::size_t sent = 0;
-            auto status = socket.send( &sendBuffer[ 0 ], sendBuffer.length(), sent );
+            status = socket.send( &sendBuffer[ 0 ], sendBuffer.length(), sent );
             if ( status == sf::Socket::Done && sent > 0 )
             {
                 sendBuffer.erase( 0, sent );
             }
+            else if ( status == sf::Socket::Disconnected )
+            {
+                socket.disconnect();
+                return;
+            }
         }
+    }
+    
+    void Connection::disconnect()
+    {
+        socket.disconnect();
     }
     
     std::size_t Connection::available() const
@@ -63,19 +80,15 @@ namespace net
     void Connection::write( void* data, std::size_t amount )
     {
         std::size_t sent = 0;
-        socket.send( data, amount, sent );
-        if ( sent < amount )
+        auto status = socket.send( data, amount, sent );
+        if ( status == sf::Socket::Partial && sent < amount )
         {
             sendBuffer += std::string( static_cast< char* >( data ), amount );
         }
-    }
-    
-    void Connection::write( const Packet* packet )
-    {
-        std::ostringstream oss;
-        packet->write( oss );
-        
-        std::string data = oss.str();
-        write( &data[ 0 ], data.length() );
+        else if ( status == sf::Socket::Disconnected )
+        {
+            socket.disconnect();
+            return;
+        }
     }
 }

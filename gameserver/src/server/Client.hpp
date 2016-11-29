@@ -16,10 +16,13 @@ namespace server
     class Client
     {
         public:
-            Client( Server& theServer );
+            Client( Server& theServer, std::unique_ptr< net::Connection > theConn );
             ~Client();
             
             void update();
+            
+            void disconnect();
+            bool isConnected() const;
             
             void send( const net::Packet* packet );
         

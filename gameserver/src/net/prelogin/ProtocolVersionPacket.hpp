@@ -1,7 +1,7 @@
 #ifndef NET_PRELOGIN_PROTOCOLVERSIONPACKET_HPP
 #define NET_PRELOGIN_PROTOCOLVERSIONPACKET_HPP
 
-#include "net/SimplePacket.hpp"
+#include "net/Packet.hpp"
 
 namespace net
 {
@@ -11,18 +11,15 @@ namespace net
         /// Client -> Server: Send the protocol version we are using to ensure compatibility
         /// Server -> Client: Send the appropriate version (so they know who is out of date),
         ///                   and then disconnect then.               
-        class ProtocolVersionPacket : public net::SimplePacket
+        class ProtocolVersionPacket : public Packet
         {
             public:
                 ProtocolVersionPacket();
                 
-                sf::Uint16 version = PROTOCOL_VERSION;
+                virtual void read( Buffer& buffer ) override;
+                virtual void write( Buffer& buffer ) const override;
                 
-                virtual void write( std::ostream& out ) const override;
-            
-            protected:
-                virtual std::size_t getSize() const override;
-                virtual void read( std::istream& in ) override;
+                sf::Uint16 version = PROTOCOL_VERSION;
         };
     }
 }

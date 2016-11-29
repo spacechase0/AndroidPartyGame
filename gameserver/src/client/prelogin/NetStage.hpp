@@ -12,7 +12,7 @@ namespace client
         class NetStage : public net::prelogin::NetStage
         {
             public:
-                NetStage( Client& theClient );
+                NetStage( Client& theClient, net::Connection& theConn );
             
             private:
                 Client& client;

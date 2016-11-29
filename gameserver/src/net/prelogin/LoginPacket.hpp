@@ -1,6 +1,8 @@
 #ifndef NET_PRELOGIN_LOGINPACKET_HPP
 #define NET_PRELOGIN_LOGINPACKET_HPP
 
+#include <string>
+
 #include "net/Packet.hpp"
 
 namespace net
@@ -12,18 +14,11 @@ namespace net
             public:
                 LoginPacket();
                 
-                virtual unsigned int getCurrentReadStage() const override;
-                virtual unsigned int getReadStageCount() const override;
-                virtual std::size_t getCurrentReadStageSize() const override;
-                virtual void doReadStage( std::istream& in ) override;
-                
-                virtual void write( std::ostream& out ) const override;
+                virtual void read( Buffer& buffer ) override;
+                virtual void write( Buffer& buffer ) const override;
                 
                 std::string username;
                 std::string password;
-            
-            private:
-                unsigned int readStage = 0;
         };
     }
 }

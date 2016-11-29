@@ -1,6 +1,5 @@
 #include "server/Server.hpp"
 
-#include <iostream>
 #include <memory>
 #include <SFML/Network/TcpSocket.hpp>
 #include <SFML/System/Lock.hpp>
@@ -29,9 +28,20 @@ namespace server
         
         while ( isRunning() )
         {
-            for ( auto& client : clients )
             {
-                client->update();
+                sf::Lock lock( clientsM );
+                auto it = clients.begin();
+                while ( it != clients.end() )
+                {
+                    Client& client = ( * it->get() );
+                    client.update();
+                    
+                    if ( !client.isConnected() )
+                    {
+                        it = clients.erase( it );
+                    }
+                    else ++it;
+                }
             }
             
             sf::sleep( sf::milliseconds( 10 ) );
@@ -63,8 +73,7 @@ namespace server
             conn->socket.setBlocking( false );
             
             log( "[INFO] New connection.\n" );
-            std::unique_ptr< Client > client( new Client( * this ) );
-            client->conn = std::move( conn );
+            std::unique_ptr< Client > client( new Client( ( * this ), std::move( conn ) ) );
             
             sf::Lock lock( clientsM );
             clients.push_back( std::move( client ) );

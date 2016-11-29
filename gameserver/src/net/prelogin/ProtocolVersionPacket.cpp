@@ -1,5 +1,6 @@
 #include "net/prelogin/ProtocolVersionPacket.hpp"
 
+#include "net/Buffer.hpp"
 #include "net/prelogin/PacketId.hpp"
 
 namespace net
@@ -7,23 +8,18 @@ namespace net
     namespace prelogin
     {
         ProtocolVersionPacket::ProtocolVersionPacket()
-        :   SimplePacket( PacketId::ProtocolVersion )
+        :   Packet( PacketId::ProtocolVersion )
         {
-        }
-        
-        void ProtocolVersionPacket::write( std::ostream& out ) const
-        {
-            out << version;
-        }
-    
-        std::size_t ProtocolVersionPacket::getSize() const
-        {
-            return sizeof( version );
         }
 
-        void ProtocolVersionPacket::read( std::istream& in )
+        void ProtocolVersionPacket::read( Buffer& buffer )
         {
-            in >> version;
+            buffer >> version;
+        }
+        
+        void ProtocolVersionPacket::write( Buffer& buffer ) const
+        {
+            buffer << version;
         }
     }
 }

@@ -10,8 +10,9 @@ namespace client
     {
         using namespace net::prelogin;
         
-        NetStage::NetStage( Client& theClient )
-        :   client( theClient )
+        NetStage::NetStage( Client& theClient, net::Connection& theConn )
+        :   net::prelogin::NetStage( theConn ),
+            client( theClient )
         {
             using namespace std::placeholders;
             

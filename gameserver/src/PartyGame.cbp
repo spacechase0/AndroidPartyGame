@@ -131,14 +131,14 @@
 			<Option target="Client (Debug)" />
 			<Option target="Client (Release)" />
 		</Unit>
+		<Unit filename="net/Buffer.cpp" />
+		<Unit filename="net/Buffer.hpp" />
 		<Unit filename="net/Connection.cpp" />
 		<Unit filename="net/Connection.hpp" />
 		<Unit filename="net/NetStage.cpp" />
 		<Unit filename="net/NetStage.hpp" />
 		<Unit filename="net/Packet.cpp" />
 		<Unit filename="net/Packet.hpp" />
-		<Unit filename="net/SimplePacket.cpp" />
-		<Unit filename="net/SimplePacket.hpp" />
 		<Unit filename="net/prelogin/LoginPacket.cpp" />
 		<Unit filename="net/prelogin/LoginPacket.hpp" />
 		<Unit filename="net/prelogin/LoginStatusPacket.cpp" />
@@ -172,6 +172,14 @@
 			<Option target="Server (Release)" />
 		</Unit>
 		<Unit filename="server/main.cpp">
+			<Option target="Server (Debug)" />
+			<Option target="Server (Release)" />
+		</Unit>
+		<Unit filename="server/prelogin/NetStage.cpp">
+			<Option target="Server (Debug)" />
+			<Option target="Server (Release)" />
+		</Unit>
+		<Unit filename="server/prelogin/NetStage.hpp">
 			<Option target="Server (Debug)" />
 			<Option target="Server (Release)" />
 		</Unit>

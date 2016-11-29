@@ -1,5 +1,7 @@
 #include "client/Client.hpp"
 
+#include <SFML/System/Sleep.hpp>
+
 using namespace client;
 
 int main()
