@@ -15,12 +15,6 @@ namespace net
     class NetStage
     {
         public:
-            enum Id : sf::Uint8
-            {
-                PreLogin,
-                Lobby,
-                Game,
-            };
             typedef std::function< void ( const Packet* ) > PacketHandler;
             
             NetStage( Connection& theConn );

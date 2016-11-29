@@ -7,6 +7,8 @@
 #include <SFML/System/Thread.hpp>
 #include <util/Logger.hpp>
 
+#include "server/Lobby.hpp"
+
 namespace server
 {
     class Client;
@@ -32,7 +34,9 @@ namespace server
             sf::Mutex clientsM;
             std::list< std::unique_ptr< Client > > clients;
             
+            sf::Thread lobbyThread;
             Lobby lobby;
+            void runLobby();
             
             std::list< Match > matches;
             

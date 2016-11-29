@@ -147,9 +147,9 @@
 		<Unit filename="net/NetStage.hpp" />
 		<Unit filename="net/Packet.cpp" />
 		<Unit filename="net/Packet.hpp" />
+		<Unit filename="net/PacketId.hpp" />
 		<Unit filename="net/lobby/NetStage.cpp" />
 		<Unit filename="net/lobby/NetStage.hpp" />
-		<Unit filename="net/lobby/PacketId.hpp" />
 		<Unit filename="net/lobby/Packets.hpp" />
 		<Unit filename="net/prelogin/LoginPacket.cpp" />
 		<Unit filename="net/prelogin/LoginPacket.hpp" />
@@ -158,7 +158,6 @@
 		<Unit filename="net/prelogin/LoginStatusPacket.hpp" />
 		<Unit filename="net/prelogin/NetStage.cpp" />
 		<Unit filename="net/prelogin/NetStage.hpp" />
-		<Unit filename="net/prelogin/PacketId.hpp" />
 		<Unit filename="net/prelogin/Packets.hpp" />
 		<Unit filename="net/prelogin/ProtocolVersionPacket.cpp" />
 		<Unit filename="net/prelogin/ProtocolVersionPacket.hpp" />
@@ -172,6 +171,14 @@
 			<Option target="Server (Debug)" />
 			<Option target="Server (Release)" />
 		</Unit>
+		<Unit filename="server/ClientTransition.cpp">
+			<Option target="Server (Debug)" />
+			<Option target="Server (Release)" />
+		</Unit>
+		<Unit filename="server/ClientTransition.hpp">
+			<Option target="Server (Debug)" />
+			<Option target="Server (Release)" />
+		</Unit>
 		<Unit filename="server/DummyUserDatabase.cpp">
 			<Option target="Server (Debug)" />
 			<Option target="Server (Release)" />
@@ -180,11 +187,27 @@
 			<Option target="Server (Debug)" />
 			<Option target="Server (Release)" />
 		</Unit>
+		<Unit filename="server/ITransitioner.cpp">
+			<Option target="Server (Debug)" />
+			<Option target="Server (Release)" />
+		</Unit>
+		<Unit filename="server/ITransitioner.hpp">
+			<Option target="Server (Debug)" />
+			<Option target="Server (Release)" />
+		</Unit>
 		<Unit filename="server/IUserDatabase.cpp">
 			<Option target="Server (Debug)" />
 			<Option target="Server (Release)" />
 		</Unit>
 		<Unit filename="server/IUserDatabase.hpp">
+			<Option target="Server (Debug)" />
+			<Option target="Server (Release)" />
+		</Unit>
+		<Unit filename="server/Lobby.cpp">
+			<Option target="Server (Debug)" />
+			<Option target="Server (Release)" />
+		</Unit>
+		<Unit filename="server/Lobby.hpp">
 			<Option target="Server (Debug)" />
 			<Option target="Server (Release)" />
 		</Unit>

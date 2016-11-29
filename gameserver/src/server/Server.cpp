@@ -16,6 +16,8 @@ namespace server
     Server::Server()
     :   log( "server.log" ),
         users( new DummyUserDatabase() ),
+        lobbyThread( &Server::runLobby, this ),
+        lobby( * this ),
         listenerThread( &Server::listen, this )
     {
     }
@@ -26,6 +28,7 @@ namespace server
     
     void Server::run()
     {
+        lobbyThread.launch();
         listenerThread.launch();
         
         while ( isRunning() )
@@ -36,10 +39,18 @@ namespace server
                 while ( it != clients.end() )
                 {
                     Client& client = ( * it->get() );
-                    client.update();
+                    auto trans = client.update();
                     
                     if ( !client.isConnected() )
                     {
+                        it = clients.erase( it );
+                    }
+                    else if ( trans.type != ClientTransition::None )
+                    {
+                        if ( trans.type == ClientTransition::Lobby )
+                            lobby.moveToLobby( std::move( * it ) );
+                        else if ( trans.type == ClientTransition::Match )
+                            ; // TODO
                         it = clients.erase( it );
                     }
                     else ++it;
@@ -56,6 +67,15 @@ namespace server
         log( "[INFO] Stopping server...\n" );
         running = false;
         listener.close();
+    }
+    
+    void Server::runLobby()
+    {
+        while ( isRunning() )
+        {
+            lobby.update();
+            sf::sleep( sf::milliseconds( 10 ) );
+        }
     }
     
     void Server::listen()

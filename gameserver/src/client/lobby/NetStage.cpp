@@ -1,8 +1,8 @@
 #include "client/lobby/NetStage.hpp"
 
 #include "client/Client.hpp"
-#include "net/lobby/PacketId.hpp"
 #include "net/lobby/Packets.hpp"
+#include "net/PacketId.hpp"
 
 namespace client
 {

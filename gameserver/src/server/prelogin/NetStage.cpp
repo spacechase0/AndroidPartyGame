@@ -4,13 +4,14 @@
 #include "server/IUserDatabase.hpp"
 #include "server/lobby/NetStage.hpp"
 #include "server/Server.hpp"
-#include "net/prelogin/PacketId.hpp"
+#include "net/PacketId.hpp"
 #include "net/prelogin/Packets.hpp"
 
 namespace server
 {
     namespace prelogin
     {
+        using namespace net;
         using namespace net::prelogin;
         
         NetStage::NetStage( Server& theServer, Client& theClient, net::Connection& theConn )
@@ -64,6 +65,7 @@ namespace server
                 {
                     server.log( "[INFO] Client logged in as $.\n", username );
                     client.setNetStage( std::unique_ptr< net::NetStage >( new server::lobby::NetStage( server, client, conn ) ) );
+                    client.user = username;
                 }
                 client.send( new LoginStatusPacket( status ) );
             } );

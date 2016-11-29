@@ -1,6 +1,6 @@
 #include "net/prelogin/NetStage.hpp"
 
-#include "net/prelogin/PacketId.hpp"
+#include "net/PacketId.hpp"
 #include "net/prelogin/Packets.hpp"
 
 namespace net

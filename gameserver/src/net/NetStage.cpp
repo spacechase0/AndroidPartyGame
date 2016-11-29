@@ -7,7 +7,7 @@
 
 namespace net
 {
-    NetStage::NetStage( Connection& theConn )
+    NetStage::NetStage(  Connection& theConn )
     :   conn( theConn )
     {
     }

@@ -3,6 +3,8 @@
 
 #include <memory>
 
+#include "server/ClientTransition.hpp"
+
 namespace net
 {
     class Connection;
@@ -19,7 +21,7 @@ namespace server
             Client( Server& theServer, std::unique_ptr< net::Connection > theConn );
             ~Client();
             
-            void update();
+            ClientTransition update();
             
             void disconnect();
             bool isConnected() const;
@@ -29,6 +31,8 @@ namespace server
             net::NetStage* getNetStage();
             const net::NetStage* getNetStage() const;
             void setNetStage( std::unique_ptr< net::NetStage > theStage );
+            
+            std::string user;
         
         private:
             Server& server;

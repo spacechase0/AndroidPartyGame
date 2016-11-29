@@ -2,13 +2,14 @@
 
 #include "client/Client.hpp"
 #include "client/lobby/NetStage.hpp"
-#include "net/prelogin/PacketId.hpp"
+#include "net/PacketId.hpp"
 #include "net/prelogin/Packets.hpp"
 
 namespace client
 {
     namespace prelogin
     {
+        using namespace net;
         using namespace net::prelogin;
         
         NetStage::NetStage( Client& theClient, net::Connection& theConn )

@@ -1,6 +1,7 @@
 #include "server/Client.hpp"
 
 #include "net/Connection.hpp"
+#include "server/ITransitioner.hpp"
 #include "server/prelogin/NetStage.hpp"
 
 namespace server
@@ -16,20 +17,25 @@ namespace server
     {
     }
     
-    void Client::update()
+    ClientTransition Client::update()
     {
         if ( !isConnected() )
-            return;
+            return ClientTransition{ ClientTransition::None };;
             
         if ( pendingStage )
         {
             stage = std::move( pendingStage );
+            auto transitioner = dynamic_cast< ITransitioner* >( stage.get() );
+            if ( transitioner )
+                return transitioner->getTransition();
             //if ( onStageChange )
             //    onStageChange();
         }
         
         conn->update();
         stage->update();
+        
+        return ClientTransition{ ClientTransition::None };
     }
     
     void Client::disconnect()

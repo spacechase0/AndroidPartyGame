@@ -2,6 +2,7 @@
 #define SERVER_LOBBY_NETSTAGE_HPP
 
 #include "net/lobby/NetStage.hpp"
+#include "server/ITransitioner.hpp"
 
 namespace server
 {
@@ -10,10 +11,12 @@ namespace server
     
     namespace lobby
     {
-        class NetStage : public net::lobby::NetStage
+        class NetStage : public net::lobby::NetStage, public ITransitioner
         {
             public:
                 NetStage( Server& theServer, Client& theClient, net::Connection& theConn );
+                
+                virtual ClientTransition getTransition() const override;
             
             private:
                 Server& server;

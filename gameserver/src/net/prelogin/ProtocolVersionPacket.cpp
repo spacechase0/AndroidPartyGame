@@ -1,7 +1,7 @@
 #include "net/prelogin/ProtocolVersionPacket.hpp"
 
 #include "net/Buffer.hpp"
-#include "net/prelogin/PacketId.hpp"
+#include "net/PacketId.hpp"
 
 namespace net
 {

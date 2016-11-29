@@ -54,4 +54,8 @@ int main()
         
         c.log( "[INFO] Finished prelogin stage.\n" );
     }
+    {
+        client::lobby::NetStage* lobby = dynamic_cast< client::lobby::NetStage* >( c.getNetStage());
+        
+    }
 }
