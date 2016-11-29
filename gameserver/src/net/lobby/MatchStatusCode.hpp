@@ -9,10 +9,12 @@ namespace net
     {
         enum MatchStatusCode : sf::Uint8
         {
+            MatchNotExist,
             MatchWasFull,
             KickedFromMatch,
-            HostLeftMatch,
             JoinedMatch,
+            LeftMatch,
+            StartMatch,
             
             NONE,
         };

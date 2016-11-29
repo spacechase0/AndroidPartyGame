@@ -224,6 +224,10 @@
 			<Option target="Server (Debug)" />
 			<Option target="Server (Release)" />
 		</Unit>
+		<Unit filename="server/Match.cpp">
+			<Option target="Server (Debug)" />
+			<Option target="Server (Release)" />
+		</Unit>
 		<Unit filename="server/Match.hpp">
 			<Option target="Server (Debug)" />
 			<Option target="Server (Release)" />

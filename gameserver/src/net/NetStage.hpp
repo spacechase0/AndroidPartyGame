@@ -5,6 +5,7 @@
 #include <map>
 #include <memory>
 #include <SFML/Config.hpp>
+#include <type_traits>
 
 #include "net/Packet.hpp"
 
@@ -25,6 +26,12 @@ namespace net
             void addHandler( Packet::Id id, PacketHandler&& handler );
             
             void send( const Packet* packet );
+            template< typename T >
+            typename std::enable_if< std::is_base_of< net::Packet, T >::value >::type
+            send( const T& packet )
+            {
+                send( &packet );
+            }
         
         protected:
             Connection& conn;

@@ -1,8 +1,9 @@
+#include <SFML/System/Sleep.hpp>
+
 #include "client/Client.hpp"
 #include "client/prelogin/NetStage.hpp"
 #include "client/lobby/NetStage.hpp"
-
-#include <SFML/System/Sleep.hpp>
+#include "game/MatchData.hpp"
 
 using namespace client;
 
@@ -57,5 +58,27 @@ int main()
     {
         client::lobby::NetStage* lobby = dynamic_cast< client::lobby::NetStage* >( c.getNetStage());
         
+        lobby->onMatchList = [&]( const std::vector< game::MatchData >& matches )
+        {
+            c.log( "[INFO] Obtained $ matches: \n", matches.size() );
+            for ( const auto& match : matches )
+                c.log( "[INFO] \t$ ($/$)\n", match.name, match.players.size(), static_cast< int >( match.maxPlayers ) );
+            
+            if ( matches.size() == 0 )
+            {
+                lobby->createMatch( game::MatchData( "My Match", 2 ) );
+            }
+            else
+            {
+                lobby->joinMatch( matches[ 0 ] );
+            }
+        };
+        lobby->getMatchList();
+        
+        for ( int i = 0; i < 10; ++i )
+        {
+            c.update();
+            sf::sleep( sf::seconds( 1 ) );
+        }
     }
 }

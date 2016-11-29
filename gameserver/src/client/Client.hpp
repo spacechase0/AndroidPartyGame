@@ -2,6 +2,7 @@
 #define CLIENT_CLIENT_HPP
 
 #include <SFML/Network/TcpSocket.hpp>
+#include <type_traits>
 #include <util/Logger.hpp>
 
 #include "net/Connection.hpp"
@@ -24,7 +25,8 @@ namespace client
             
             void send( const net::Packet* packet );
             template< typename T >
-            void send( const T& packet )
+            typename std::enable_if< std::is_base_of< net::Packet, T >::value >::type
+            send( const T& packet )
             {
                 send( &packet );
             }

@@ -26,6 +26,48 @@ namespace server
     {
     }
     
+    void Server::addMatch( std::unique_ptr< Match > match )
+    {
+        sf::Lock lock( matchesM );
+        matches.insert( std::move( match ) );
+    }
+    
+    void Server::removeMatch( Match* match )
+    {
+        sf::Lock lock( matchesM );
+        for ( auto it = matches.begin(); it != matches.end(); ++it )
+        {
+            if ( it->get() == match )
+            {
+                matches.erase( it );
+                break;
+            }
+        }
+    }
+    
+    Match* Server::findMatch( const std::string& host )
+    {
+        sf::Lock lock( matchesM );
+        for ( auto& match : matches )
+            if ( match->getHost().user == host )
+                return match.get();
+        
+        return nullptr;
+    }
+    
+    std::vector< game::MatchData > Server::getMatchData() const
+    {
+        sf::Lock lock( matchesM );
+        
+        std::vector< MatchData > ret;
+        ret.reserve( matches.size() );
+        
+        for ( const auto& match : matches )
+            ret.push_back( match.asData() );
+        
+        return ret;
+    }
+    
     void Server::run()
     {
         lobbyThread.launch();

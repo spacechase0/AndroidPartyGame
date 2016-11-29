@@ -2,6 +2,7 @@
 #define SERVER_CLIENT_HPP
 
 #include <memory>
+#include <type_traits>
 
 #include "server/ClientTransition.hpp"
 
@@ -28,7 +29,8 @@ namespace server
             
             void send( const net::Packet* packet );
             template< typename T >
-            void send( const T& packet )
+            typename std::enable_if< std::is_base_of< net::Packet, T >::value >::type
+            send( const T& packet )
             {
                 send( &packet );
             }

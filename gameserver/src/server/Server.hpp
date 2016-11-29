@@ -2,12 +2,18 @@
 #define SERVER_SERVER_HPP
 
 #include <list>
+#include <set>
 #include <SFML/Network/TcpListener.hpp>
 #include <SFML/System/Mutex.hpp>
 #include <SFML/System/Thread.hpp>
 #include <util/Logger.hpp>
 
 #include "server/Lobby.hpp"
+
+namespace game
+{
+    class MatchData;
+}
 
 namespace server
 {
@@ -23,6 +29,10 @@ namespace server
             
             util::Logger log;
             std::unique_ptr< IUserDatabase > users;
+            void addMatch( std::unique_ptr< Match > match );
+            void removeMatch( Match* match );
+            Match* findMatch( const std::string& host );
+            std::vector< game::MatchData > getMatchData() const;
             
             void run();
             void stop();
@@ -38,7 +48,8 @@ namespace server
             Lobby lobby;
             void runLobby();
             
-            std::list< Match > matches;
+            sf::Mutex matchesM;
+            std::set< std::unique_ptr< Match > > matches;
             
             sf::Thread listenerThread;
             sf::TcpListener listener;

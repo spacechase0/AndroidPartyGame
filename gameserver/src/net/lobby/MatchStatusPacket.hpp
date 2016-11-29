@@ -18,7 +18,7 @@ namespace net
                 virtual void read( Buffer& buffer ) override;
                 virtual void write( Buffer& buffer ) const override;
                 
-                MatchStatusCode status;
+                MatchStatusCode status = MatchStatusCode::NONE;
                 game::MatchData match;
         };
     }
