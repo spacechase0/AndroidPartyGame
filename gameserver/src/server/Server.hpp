@@ -41,14 +41,14 @@ namespace server
         private:
             bool running = true;
             
-            sf::Mutex clientsM;
+            mutable sf::Mutex clientsM;
             std::list< std::unique_ptr< Client > > clients;
             
             sf::Thread lobbyThread;
             Lobby lobby;
             void runLobby();
             
-            sf::Mutex matchesM;
+            mutable sf::Mutex matchesM;
             std::set< std::unique_ptr< Match > > matches;
             
             sf::Thread listenerThread;

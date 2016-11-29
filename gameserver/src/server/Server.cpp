@@ -6,6 +6,7 @@
 #include <SFML/System/Time.hpp>
 #include <SFML/System/Sleep.hpp>
 
+#include "game/MatchData.hpp"
 #include "net/Connection.hpp"
 #include "server/Client.hpp"
 #include "server/DummyUserDatabase.hpp"
@@ -49,7 +50,7 @@ namespace server
     {
         sf::Lock lock( matchesM );
         for ( auto& match : matches )
-            if ( match->getHost().user == host )
+            if ( match->getHost()->user == host )
                 return match.get();
         
         return nullptr;
@@ -59,11 +60,11 @@ namespace server
     {
         sf::Lock lock( matchesM );
         
-        std::vector< MatchData > ret;
+        std::vector< game::MatchData > ret;
         ret.reserve( matches.size() );
         
         for ( const auto& match : matches )
-            ret.push_back( match.asData() );
+            ret.push_back( match->asData() );
         
         return ret;
     }

@@ -37,7 +37,7 @@ namespace server
     
     void Lobby::moveToLobby( std::unique_ptr< Client > client )
     {
-        server.log( "[INFO] Client $ now in lobby.", client->user );
+        server.log( "[INFO] Client $ now in lobby.\n", client->user );
         sf::Lock lock( clientsM );
         clients.push_back( std::move( client ) );
         

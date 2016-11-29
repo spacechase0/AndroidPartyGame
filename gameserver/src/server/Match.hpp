@@ -1,6 +1,8 @@
 #ifndef SERVER_MATCH_HPP
 #define SERVER_MATCH_HPP
 
+#include <SFML/System/Mutex.hpp>
+#include <SFML/System/Thread.hpp>
 #include <string>
 #include <vector>
 
@@ -20,7 +22,9 @@ namespace server
             Match( Server& theServer, const game::MatchData& data, Client* host );
             
             const Client* getHost() const;
-            const std::vector< Client* > getPlayers() const;
+            std::vector< Client* > getPlayers() const;
+            bool tryToJoin( Client* client );
+            void playerLeft( Client* client );
             
             game::MatchData asData() const;
             
@@ -29,10 +33,17 @@ namespace server
         
         private:
             Server& server;
+            
+            bool matchStarted = false;
+            
+            mutable sf::Mutex playersM;
             std::vector< Client* > players;
             
             std::string name;
             sf::Uint8 maxPlayers;
+            
+            sf::Thread thread;
+            void run();
     };
 }
 

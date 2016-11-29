@@ -62,7 +62,11 @@ int main()
         {
             c.log( "[INFO] Obtained $ matches: \n", matches.size() );
             for ( const auto& match : matches )
+            {
                 c.log( "[INFO] \t$ ($/$)\n", match.name, match.players.size(), static_cast< int >( match.maxPlayers ) );
+                for ( const auto& player : match.players )
+                    c.log( "[INFO] \t\t$\n", player );
+            }
             
             if ( matches.size() == 0 )
             {

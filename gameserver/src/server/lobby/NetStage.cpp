@@ -45,8 +45,12 @@ namespace server
             auto create = static_cast< const CreateMatchPacket* >( packet );
             
             std::unique_ptr< Match > match( new Match( server, create->match, &client ) );
+            Match* tmp = match.get();
             server.addMatch( std::move( match ) );
-            client.send( MatchStatusPacket( JoinedMatch, match->asData() ) );
+            client.send( MatchStatusPacket( JoinedMatch, tmp->asData() ) );
+            current = tmp;
+            
+            server.log( "[INFO] Client $ created a match called \"$\".\n", client.user, create->match.name );
         }
         
         void NetStage::handleJoinMatch( const net::Packet* packet )
@@ -59,14 +63,16 @@ namespace server
             Match* match = server.findMatch( join->host );
             if ( match )
             {
-                if ( match->getPlayers().size() == match->getMaxPlayers() )
-                    toSend.status = MatchStatusCode::MatchWasFull;
-                else
+                if ( match->tryToJoin( &client ) )
                 {
                     toSend.status = MatchStatusCode::JoinedMatch;
                     toSend.match = match->asData();
                     current = match;
+                    
+                    server.log( "[INFO] Client $ joined a match called \"$\".\n", client.user, current->getName() );
                 }
+                else
+                    toSend.status = MatchStatusCode::MatchWasFull;
             }
             else toSend.status = MatchStatusCode::MatchNotExist;
             
@@ -86,12 +92,15 @@ namespace server
                         server.removeMatch( current );
                     }
                     current = nullptr;
+                    
+                    server.log( "[INFO] Client $ left the match.\n", client.user );
                 }
             }
             else if ( status->status == MatchStatusCode::StartMatch )
             {
                 if ( current && current->getHost() == &client )
                 {
+                    server.log( "[INFO] Client $ has started their match \"$\".\n", client.user, current->getName() );
                     // TODO
                 }
             }

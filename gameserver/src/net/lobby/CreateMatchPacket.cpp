@@ -13,7 +13,7 @@ namespace net
         }
         
         CreateMatchPacket::CreateMatchPacket( const game::MatchData& theMatch )
-        :   Packet( PacketId::RequestMatchList ),
+        :   Packet( PacketId::CreateMatch ),
             match( theMatch )
         {
         }
