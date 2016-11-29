@@ -13,9 +13,9 @@ namespace net
             switch ( id )
             {
                 case PacketId::ProtocolVersion: ret.reset( new ProtocolVersionPacket() ); break;
-                case PacketId::Register:        ret.reset( new RegisterPacket()        ); break;
-                case PacketId::Login:           ret.reset( new LoginPacket()           ); break;
-                case PacketId::LoginStatus:     ret.reset( new LoginStatusPacket()     ); break;
+                case PacketId::Register       : ret.reset( new RegisterPacket()        ); break;
+                case PacketId::Login          : ret.reset( new LoginPacket()           ); break;
+                case PacketId::LoginStatus    : ret.reset( new LoginStatusPacket()     ); break;
             }
             return ret;
         }

@@ -76,6 +76,8 @@ namespace net
         
         str.resize( len );
         ss.read( &str[ 0 ], len );
+        
+        return ( * this );
     }
     
     Buffer& Buffer::operator << ( sf::Uint8 i )

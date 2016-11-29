@@ -139,6 +139,8 @@
 			<Option target="Client (Debug)" />
 			<Option target="Client (Release)" />
 		</Unit>
+		<Unit filename="game/MatchData.cpp" />
+		<Unit filename="game/MatchData.hpp" />
 		<Unit filename="net/Buffer.cpp" />
 		<Unit filename="net/Buffer.hpp" />
 		<Unit filename="net/Connection.cpp" />
@@ -148,9 +150,20 @@
 		<Unit filename="net/Packet.cpp" />
 		<Unit filename="net/Packet.hpp" />
 		<Unit filename="net/PacketId.hpp" />
+		<Unit filename="net/lobby/CreateMatchPacket.cpp" />
+		<Unit filename="net/lobby/CreateMatchPacket.hpp" />
+		<Unit filename="net/lobby/JoinMatchPacket.cpp" />
+		<Unit filename="net/lobby/JoinMatchPacket.hpp" />
+		<Unit filename="net/lobby/MatchListPacket.cpp" />
+		<Unit filename="net/lobby/MatchListPacket.hpp" />
+		<Unit filename="net/lobby/MatchStatusCode.hpp" />
+		<Unit filename="net/lobby/MatchStatusPacket.cpp" />
+		<Unit filename="net/lobby/MatchStatusPacket.hpp" />
 		<Unit filename="net/lobby/NetStage.cpp" />
 		<Unit filename="net/lobby/NetStage.hpp" />
 		<Unit filename="net/lobby/Packets.hpp" />
+		<Unit filename="net/lobby/RequestMatchListPacket.cpp" />
+		<Unit filename="net/lobby/RequestMatchListPacket.hpp" />
 		<Unit filename="net/prelogin/LoginPacket.cpp" />
 		<Unit filename="net/prelogin/LoginPacket.hpp" />
 		<Unit filename="net/prelogin/LoginStatusCode.hpp" />

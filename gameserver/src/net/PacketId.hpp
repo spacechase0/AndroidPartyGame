@@ -7,10 +7,18 @@ namespace net
 {
     enum PacketId : Packet::Id
     {
+        // Prelobby
         ProtocolVersion,
         Register,
         Login,
         LoginStatus,
+        
+        // Lobby
+        RequestMatchList,
+        MatchList,
+        CreateMatch,
+        JoinMatch,
+        MatchStatus,
     };
 }
 

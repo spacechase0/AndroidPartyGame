@@ -4,6 +4,7 @@
 #include <SFML/System/Vector2.hpp>
 #include <string>
 #include <sstream>
+#include <vector>
 
 namespace net
 {
@@ -25,6 +26,17 @@ namespace net
                 return ( * this ) >> v.x >> v.y;
             }
             Buffer& operator >> ( std::string& str );
+            template< typename T >
+            Buffer& operator >> ( std::vector< T >& vec )
+            {
+                sf::Uint32 count;
+                ( * this ) >> count;
+                vec.resize( count );
+                for ( sf::Uint32 i = 0; i < count; ++i )
+                    ( * this ) >> vec[ i ];
+                
+                return ( * this );
+            }
             
             Buffer& operator << ( sf::Uint8 i );
             Buffer& operator << ( sf::Uint16 i );
@@ -38,6 +50,16 @@ namespace net
                 return ( * this ) << v.x << v.y;
             }
             Buffer& operator << ( const std::string& str );
+            template< typename T >
+            Buffer& operator << ( const std::vector< T >& vec )
+            {
+                sf::Uint32 count = static_cast< sf::Uint32 >( vec.size() );
+                ( * this ) << count;
+                for ( sf::Uint32 i = 0; i < count; ++i )
+                    ( * this ) << vec[ i ];
+                
+                return ( * this );
+            }
             
             std::string data() const;
             
