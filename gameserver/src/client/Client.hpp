@@ -23,6 +23,11 @@ namespace client
             inline bool isConnected() const { return conn.socket.getLocalPort() != 0; }
             
             void send( const net::Packet* packet );
+            template< typename T >
+            void send( const T& packet )
+            {
+                send( &packet );
+            }
             
             std::function< void () > onStageChange;
             net::NetStage* getNetStage();

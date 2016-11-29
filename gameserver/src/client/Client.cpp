@@ -33,7 +33,7 @@ namespace client
         conn.socket.setBlocking( false );
         
         stage.reset( new client::prelogin::NetStage( ( * this ), conn ) );
-        send( new net::prelogin::ProtocolVersionPacket() );
+        send( net::prelogin::ProtocolVersionPacket() );
         
         return true;
     }

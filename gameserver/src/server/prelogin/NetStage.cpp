@@ -32,7 +32,7 @@ namespace server
             if ( ver->version != PROTOCOL_VERSION )
             {
                 server.log( "[INFO] Client protocol version didn't match. Client sent $. (We're on $.)\n", ver->version, PROTOCOL_VERSION );
-                client.send( new ProtocolVersionPacket() );
+                client.send( ProtocolVersionPacket() );
                 client.disconnect();
                 return;
             }
@@ -49,7 +49,7 @@ namespace server
             {
                 if ( status == net::prelogin::LoginStatusCode::RegisterSuccessful )
                     server.log( "[INFO] Client registered as $.\n", username );
-                client.send( new LoginStatusPacket( status ) );
+                client.send( LoginStatusPacket( status ) );
             } );
         }
         
@@ -67,7 +67,7 @@ namespace server
                     client.setNetStage( std::unique_ptr< net::NetStage >( new server::lobby::NetStage( server, client, conn ) ) );
                     client.user = username;
                 }
-                client.send( new LoginStatusPacket( status ) );
+                client.send( LoginStatusPacket( status ) );
             } );
         }
     }

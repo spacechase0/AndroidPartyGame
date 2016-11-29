@@ -27,6 +27,11 @@ namespace server
             bool isConnected() const;
             
             void send( const net::Packet* packet );
+            template< typename T >
+            void send( const T& packet )
+            {
+                send( &packet );
+            }
             
             net::NetStage* getNetStage();
             const net::NetStage* getNetStage() const;

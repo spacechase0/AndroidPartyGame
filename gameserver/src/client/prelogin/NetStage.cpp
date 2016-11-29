@@ -25,13 +25,13 @@ namespace client
         void NetStage::login( const std::string& username, const std::string& password )
         {
             client.log( "[INFO] Logging in as $.\n", username );
-            client.send( new LoginPacket( username, password ) );
+            client.send( LoginPacket( username, password ) );
         }
         
         void NetStage::registerUser( const std::string& username, const std::string& password )
         {
             client.log( "[INFO] Registering as $.\n", username );
-            client.send( new RegisterPacket( username, password ) );
+            client.send( RegisterPacket( username, password ) );
         }
         
         net::prelogin::LoginStatusCode NetStage::getLastLoginStatus()
@@ -51,7 +51,7 @@ namespace client
         void NetStage::handleLoginStatus( const net::Packet* packet )
         {
             auto status = static_cast< const LoginStatusPacket* >( packet );
-            client.log( "[INFO] Login status: $\n", (int) status->status );
+            //client.log( "[INFO] Login status: $\n", (int) status->status );
             lastLoginStatus = status->status;
             
             if ( lastLoginStatus == LoginStatusCode::LoginSuccessful )
