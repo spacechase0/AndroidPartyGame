@@ -17,11 +17,16 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import static android.R.attr.fragment;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
-        ProfileFragment.OnFragmentInteractionListener, MatchesFragment.OnFragmentInteractionListener {
+        ProfileFragment.OnFragmentInteractionListener, MatchesFragment.OnFragmentInteractionListener,
+        CreateMatchFragment.OnFragmentInteractionListener {
 
     FragmentManager fragmentManager;
+    Fragment fragment;
+
     Toolbar toolbar;
 
     @Override
@@ -92,7 +97,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        Fragment fragment = null;
+        fragment = null;
 
         if (id == R.id.nav_profile) {
             fragment = ProfileFragment.newInstance("", "");
@@ -117,5 +122,12 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    public void createMatch(View view) {
+        fragment = CreateMatchFragment.newInstance("","");
+        changeActionBarText(toolbar,"Create Match");
+        if(fragment != null)
+            fragmentManager.beginTransaction().replace(R.id.flContent,fragment).commit();
     }
 }
