@@ -7,7 +7,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 
 /**
@@ -23,6 +27,9 @@ public class MatchesFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    static ArrayList listContent = new ArrayList();
+    static ArrayAdapter<String> arrayAdapter;
+    ListView listView;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -51,6 +58,7 @@ public class MatchesFragment extends Fragment {
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
+
         fragment.setArguments(args);
         return fragment;
     }
@@ -68,7 +76,16 @@ public class MatchesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_matches, container, false);
+        View view = inflater.inflate(R.layout.fragment_matches, container, false);
+        listView = (ListView) view.findViewById(R.id.matchesListView);
+        //listContent.clear();
+        //listContent.add("Match 1");
+        //listContent.add("Match 2");
+       //listContent.add("Match 3");
+        arrayAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, listContent);
+        listView.setAdapter(arrayAdapter);
+
+        return view;
 
     }
 

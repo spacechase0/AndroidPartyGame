@@ -4,16 +4,27 @@
     android:layout_height="match_parent"
     tools:context="edu.fsu.cs.cop4656.kingdomparty.MatchesFragment">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Matches Fragment" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/createMatchButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create a Match"
-        android:onClick="createMatch"/>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_above="@+id/createMatchButton"
+            android:id="@+id/matchesListView" />
+
+        <Button
+            android:id="@+id/createMatchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="89dp"
+            android:text="Create a Match"
+            android:onClick="createMatch"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="43dp" />
+    </RelativeLayout>
 
 </FrameLayout>
