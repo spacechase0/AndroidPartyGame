@@ -16,7 +16,6 @@
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
-					<Add option="-lsc0-utility-d" />
 					<Add option="-lsfml-network-s-d" />
 					<Add option="-lsfml-system-s-d" />
 					<Add option="-lws2_32" />
@@ -34,7 +33,6 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add option="-lsc0-utility" />
 					<Add option="-lsfml-network-s" />
 					<Add option="-lsfml-system-s" />
 					<Add option="-lws2_32" />
@@ -51,7 +49,6 @@
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
-					<Add option="-lsc0-utility-d" />
 					<Add option="-lsfml-network-s-d" />
 					<Add option="-lsfml-graphics-s-d" />
 					<Add option="-lsfml-window-s-d" />
@@ -82,7 +79,6 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add option="-lsc0-utility" />
 					<Add option="-lsfml-network-s" />
 					<Add option="-lsfml-graphics-s" />
 					<Add option="-lsfml-window-s" />
@@ -260,6 +256,23 @@
 			<Option target="Server (Debug)" />
 			<Option target="Server (Release)" />
 		</Unit>
+		<Unit filename="util/Base64.cpp" />
+		<Unit filename="util/Base64.hpp" />
+		<Unit filename="util/Crc32.cpp" />
+		<Unit filename="util/Crc32.hpp" />
+		<Unit filename="util/Endian.cpp" />
+		<Unit filename="util/Endian.hpp" />
+		<Unit filename="util/File.cpp" />
+		<Unit filename="util/File.hpp" />
+		<Unit filename="util/Logger.cpp" />
+		<Unit filename="util/Logger.hpp" />
+		<Unit filename="util/Logger.inl" />
+		<Unit filename="util/Math.hpp" />
+		<Unit filename="util/Md5.cpp" />
+		<Unit filename="util/Md5.hpp" />
+		<Unit filename="util/String.cpp" />
+		<Unit filename="util/String.hpp" />
+		<Unit filename="util/String.inl" />
 		<Extensions>
 			<code_completion />
 			<envvars />
