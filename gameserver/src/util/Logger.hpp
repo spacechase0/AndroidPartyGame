@@ -18,16 +18,16 @@ namespace util
 			Logger( const std::string& name );
 			
 			void operator () ( const std::string& str );
-			template< typename T, typename... Args >
-			void operator ()( const std::string& str, T t, Args... args );
+			template< typename... Args >
+			void operator ()( const std::string& str, const Args&... args );
 			
 			void setConsoleOutput( bool theOutputConsole );
 			
 			// Static interface - uses thread ID
 			static void setName( const std::string& name, const std::string& file );
 			static void log( const std::string& str );
-			template< typename T, typename ... Args >
-			inline static void log( const std::string& str, T t, Args... args );
+			template< typename ... Args >
+			inline static void log( const std::string& str, const Args&... args );
 			static void setThreadConsoleOutput( bool theOutputConsole );
 			
 		private:
@@ -46,22 +46,9 @@ namespace util
 	
 	inline void log( const std::string& str );
 	template< typename... Args >
-	inline void log( const std::string& str, Args... args );
+	inline void log( const std::string& str, const Args&... args );
 }
 
 #include "Logger.inl"
-
-#ifndef UTIL_REMOVE_GLOBAL_LOG_FUNCTION
-inline void log( const std::string& str )
-{
-	util::log( str );
-}
-
-template< typename... Args >
-inline void log( const std::string& str, Args... args )
-{
-	util::log( str, args... );
-}
-#endif
 
 #endif // LOGGER_HPP
