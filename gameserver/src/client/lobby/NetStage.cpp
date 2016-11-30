@@ -17,8 +17,8 @@ namespace client
         {
             using namespace std::placeholders;
             
-            addHandler( PacketId::MatchList,   std::bind( &handleMatchList,   this, _1 ) );
-            addHandler( PacketId::MatchStatus, std::bind( &handleMatchStatus, this, _1 ) );
+            addHandler( PacketId::MatchList,   std::bind( &NetStage::handleMatchList,   this, _1 ) );
+            addHandler( PacketId::MatchStatus, std::bind( &NetStage::handleMatchStatus, this, _1 ) );
         }
         
         void NetStage::getMatchList()

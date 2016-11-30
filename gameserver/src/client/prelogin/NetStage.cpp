@@ -18,8 +18,8 @@ namespace client
         {
             using namespace std::placeholders;
             
-            addHandler( PacketId::ProtocolVersion, std::bind( &handleProtocolVersion, this, _1 ) );
-            addHandler( PacketId::LoginStatus,     std::bind( &handleLoginStatus,     this, _1 ) );
+            addHandler( PacketId::ProtocolVersion, std::bind( &NetStage::handleProtocolVersion, this, _1 ) );
+            addHandler( PacketId::LoginStatus,     std::bind( &NetStage::handleLoginStatus,     this, _1 ) );
         }
         
         void NetStage::login( const std::string& username, const std::string& password )

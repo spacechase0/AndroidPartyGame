@@ -22,10 +22,10 @@ namespace server
         {
             using namespace std::placeholders;
             
-            addHandler( PacketId::RequestMatchList, std::bind( &handleRequestMatchList, this, _1 ) );
-            addHandler( PacketId::CreateMatch,      std::bind( &handleCreateMatch,      this, _1 ) );
-            addHandler( PacketId::JoinMatch,        std::bind( &handleJoinMatch,        this, _1 ) );
-            addHandler( PacketId::MatchStatus,      std::bind( &handleMatchStatus,      this, _1 ) );
+            addHandler( PacketId::RequestMatchList, std::bind( &NetStage::handleRequestMatchList, this, _1 ) );
+            addHandler( PacketId::CreateMatch,      std::bind( &NetStage::handleCreateMatch,      this, _1 ) );
+            addHandler( PacketId::JoinMatch,        std::bind( &NetStage::handleJoinMatch,        this, _1 ) );
+            addHandler( PacketId::MatchStatus,      std::bind( &NetStage::handleMatchStatus,      this, _1 ) );
         }
         
         ClientTransition NetStage::getTransition() const

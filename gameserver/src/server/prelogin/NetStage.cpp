@@ -21,9 +21,9 @@ namespace server
         {
             using namespace std::placeholders;
             
-            addHandler( PacketId::ProtocolVersion, std::bind( &handleProtocolVersion, this, _1 ) );
-            addHandler( PacketId::Register,        std::bind( &handleRegister,        this, _1 ) );
-            addHandler( PacketId::Login,           std::bind( &handleLogin,           this, _1 ) );
+            addHandler( PacketId::ProtocolVersion, std::bind( &NetStage::handleProtocolVersion, this, _1 ) );
+            addHandler( PacketId::Register,        std::bind( &NetStage::handleRegister,        this, _1 ) );
+            addHandler( PacketId::Login,           std::bind( &NetStage::handleLogin,           this, _1 ) );
         }
         
         void NetStage::handleProtocolVersion( const net::Packet* packet )
