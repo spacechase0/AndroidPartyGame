@@ -38,7 +38,7 @@ namespace server
             return false;
         
         sf::Lock lock( playersM );
-        if ( players.size() == getMaxPlayers() )
+        if ( players.size() >= getMaxPlayers() )
             return false;
         
         players.push_back( client );

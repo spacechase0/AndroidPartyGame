@@ -30,6 +30,8 @@ namespace net
             if ( util::LITTLE_ENDIAN )
                 pendingId = util::swapBytes( pendingId );
             pending = getPacketFromId( pendingId );
+            
+            // TODO: Process length even if pending is still null
         }
         if ( !pending ) return;
         

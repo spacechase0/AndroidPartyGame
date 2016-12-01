@@ -49,7 +49,7 @@ namespace client
         void NetStage::handleMatchStatus( const net::Packet* packet )
         {
             auto status = static_cast< const MatchStatusPacket* >( packet );
-            client.log("something match status\n");
+            client.log("something match status $\n", status->status);
         }
     }
 }

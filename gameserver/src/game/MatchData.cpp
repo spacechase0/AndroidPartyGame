@@ -8,7 +8,7 @@ namespace game
     
     MatchData::MatchData( const std::string& theName, sf::Uint8 thePlayers )
     :   name( theName ),
-        players( thePlayers )
+        maxPlayers( thePlayers )
     {
     }
 }
