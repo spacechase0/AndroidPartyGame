@@ -62,7 +62,14 @@ namespace client
                 case net::lobby::MatchStatusCode::JoinedMatch:
                     client.log( "[INFO] We joined the match.\n" );
                     current = status->match;
-                    break;break;
+                    break;
+                case net::lobby::MatchStatusCode::MatchStatus:
+                    client.log( "[INFO] Something changed about the match:\n" );
+                    current = status->match;
+                    client.log( "[INFO] \"$\" ($/$):\n", current.name, current.players.size(), static_cast< int >( current.maxPlayers ) );
+                    for ( auto player : current.players )
+                        client.log( "[INFO] \t$\n", player );
+                    break;
                 case net::lobby::MatchStatusCode::StartMatch:
                     {
                         client.log( "[INFO] The match started!\n" );

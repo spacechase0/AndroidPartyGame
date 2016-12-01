@@ -13,6 +13,7 @@ namespace net
             MatchWasFull,
             KickedFromMatch,
             JoinedMatch,
+            MatchStatus, // Someone joined, etc.
             LeftMatch,
             StartMatch,
             

@@ -40,7 +40,7 @@ namespace net
             buffer >> tmp;
             status = static_cast< MatchStatusCode >( tmp );
             
-            if ( status == MatchStatusCode::JoinedMatch )
+            if ( status == MatchStatusCode::JoinedMatch || status == MatchStatusCode::MatchStatus )
             {
                 buffer >> match;
             }
@@ -49,7 +49,7 @@ namespace net
         void MatchStatusPacket::write( Buffer& buffer ) const
         {
             buffer << static_cast< sf::Uint8 >( status );
-            if ( status == MatchStatusCode::JoinedMatch )
+            if ( status == MatchStatusCode::JoinedMatch || status == MatchStatusCode::MatchStatus )
             {
                 buffer << match;
             }

@@ -5,6 +5,7 @@
 #include <SFML/System/Sleep.hpp>
 
 #include "game/MatchData.hpp"
+#include "net/lobby/MatchStatusPacket.hpp"
 #include "server/Client.hpp"
 #include "server/match/NetStage.hpp"
 #include "server/Server.hpp"
@@ -62,6 +63,15 @@ namespace server
             return false;
         
         players.push_back( client );
+        
+        net::lobby::MatchStatusPacket packet( net::lobby::MatchStatusCode::MatchStatus, asData() );
+        for ( auto player : players )
+        {
+            if ( player == client )
+                continue;
+            
+            player->send( packet );
+        }
         return true;
     }
     
@@ -72,6 +82,12 @@ namespace server
         if ( it != players.end() )
         {
             players.erase( it );
+            
+            net::lobby::MatchStatusPacket packet( net::lobby::MatchStatusCode::MatchStatus, asData() );
+            for ( auto player : players )
+            {
+                player->send( packet );
+            }
         }
     }
     
