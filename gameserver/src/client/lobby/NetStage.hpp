@@ -31,6 +31,7 @@ namespace client
                 void joinMatch( const game::MatchData& match );
                 
                 std::function< void ( const std::vector< game::MatchData >& ) > onMatchList;
+                std::function< void ( const game::MatchData& data ) > onMatchStart;
             
             private:
                 Client& client;

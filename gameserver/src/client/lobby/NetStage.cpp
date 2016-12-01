@@ -1,6 +1,7 @@
 #include "client/lobby/NetStage.hpp"
 
 #include "client/Client.hpp"
+#include "client/match/NetStage.hpp"
 #include "net/lobby/Packets.hpp"
 #include "net/PacketId.hpp"
 
@@ -62,7 +63,14 @@ namespace client
                     client.log( "[INFO] We joined the match.\n" );
                     current = status->match;
                     break;break;
-                case net::lobby::MatchStatusCode::StartMatch: client.log( "[INFO] The match started!\n" ); break;
+                case net::lobby::MatchStatusCode::StartMatch:
+                    {
+                        client.log( "[INFO] The match started!\n" );
+                        client.setNetStage( std::unique_ptr< net::NetStage >( new client::match::NetStage( client, conn, current ) ) );
+                        if ( onMatchStart )
+                            onMatchStart( current );
+                        break;
+                    }
                 default: break;
             }
         }

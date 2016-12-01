@@ -6,6 +6,7 @@
 
 #include "game/MatchData.hpp"
 #include "server/Client.hpp"
+#include "server/match/NetStage.hpp"
 #include "server/Server.hpp"
 
 namespace server
@@ -25,6 +26,18 @@ namespace server
         thread.wait();
     }
     
+    void Match::start()
+    {
+        if ( matchStarted ) return;
+        
+        sf::Lock lock( playersM );
+        matchStarted = true;
+        for ( auto player : players )
+        {
+            player->setNetStage( std::unique_ptr< net::NetStage >( new match::NetStage( server, ( * player ), ( * player->conn ), ( * this ) ) ) );
+        }
+    }
+    
     const Client* Match::getHost() const
     {
         sf::Lock lock( playersM );
@@ -40,10 +53,11 @@ namespace server
     
     bool Match::tryToJoin( Client* client )
     {
+        sf::Lock lock( playersM );
+        
         if ( matchStarted )
             return false;
         
-        sf::Lock lock( playersM );
         if ( players.size() >= getMaxPlayers() )
             return false;
         

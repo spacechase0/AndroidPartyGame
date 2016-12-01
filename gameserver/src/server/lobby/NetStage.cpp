@@ -104,7 +104,7 @@ namespace server
                 if ( current && current->getHost() == &client )
                 {
                     server.log( "[INFO] Client $ has started their match \"$\".\n", client.user, current->getName() );
-                    // TODO
+                    current->start();
                 }
             }
         }

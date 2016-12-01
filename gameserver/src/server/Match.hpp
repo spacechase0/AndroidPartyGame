@@ -22,6 +22,8 @@ namespace server
             Match( Server& theServer, const game::MatchData& data, Client* host );
             ~Match();
             
+            void start();
+            
             const Client* getHost() const;
             std::vector< Client* > getPlayers() const;
             bool tryToJoin( Client* client );

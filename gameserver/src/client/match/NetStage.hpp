@@ -3,12 +3,8 @@
 
 #include <vector>
 
+#include "game/MatchData.hpp"
 #include "net/match/NetStage.hpp"
-
-namespace game
-{
-    class MatchData;
-}
 
 namespace client
 {
@@ -19,7 +15,9 @@ namespace client
         class NetStage : public net::match::NetStage
         {
             public:
-                NetStage( Client& theClient, net::Connection& theConn );
+                NetStage( Client& theClient, net::Connection& theConn, const game::MatchData& theMatch );
+                
+                game::MatchData match;
             
             private:
                 Client& client;

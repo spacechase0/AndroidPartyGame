@@ -1,8 +1,10 @@
 #include <SFML/System/Sleep.hpp>
+#include <SFML/Graphics.hpp>
 
 #include "client/Client.hpp"
 #include "client/prelogin/NetStage.hpp"
 #include "client/lobby/NetStage.hpp"
+#include "client/match/NetStage.hpp"
 #include "game/MatchData.hpp"
 
 using namespace client;
@@ -56,7 +58,7 @@ int main()
         c.log( "[INFO] Finished prelogin stage.\n" );
     }
     {
-        client::lobby::NetStage* lobby = dynamic_cast< client::lobby::NetStage* >( c.getNetStage());
+        client::lobby::NetStage* lobby = dynamic_cast< client::lobby::NetStage* >( c.getNetStage() );
         
         lobby->onMatchList = [&]( const std::vector< game::MatchData >& matches )
         {
@@ -79,10 +81,38 @@ int main()
         };
         lobby->getMatchList();
         
-        while ( lobby->lastStatus != net::lobby::MatchStatusCode::StartMatch )
+        bool waiting = true;
+        lobby->onMatchStart = [&]( const game::MatchData& data )
+        {
+            waiting = false;
+        };
+        
+        while ( waiting )
         {
             c.update();
             sf::sleep( sf::seconds( 1 ) );
+        }
+    }
+    {
+        client::match::NetStage* match = dynamic_cast< client::match::NetStage* >( c.getNetStage() );
+        if ( match == nullptr )
+            c.log( "PROBLEMS!!!" );
+        
+        sf::RenderWindow window( sf::VideoMode( 640, 480 ), "Kingdom Party" );
+        window.setFramerateLimit( 30 );
+        
+        while ( window.isOpen() )
+        {
+            sf::Event event;
+            while ( window.pollEvent( event ) )
+            {
+                if ( event.type == sf::Event::Closed )
+                    window.close();
+            }
+            
+            window.clear( sf::Color::White );
+            
+            window.display();
         }
     }
 }

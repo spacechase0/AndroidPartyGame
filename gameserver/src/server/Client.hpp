@@ -47,6 +47,7 @@ namespace server
             std::unique_ptr< net::NetStage > stage;
             std::unique_ptr< net::NetStage > pendingStage;
             
+            friend class Match;
             friend class Server;
     };
 }

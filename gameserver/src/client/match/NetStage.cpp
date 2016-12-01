@@ -11,9 +11,10 @@ namespace client
         using namespace net;
         using namespace net::match;
         
-        NetStage::NetStage( Client& theClient, net::Connection& theConn )
+        NetStage::NetStage( Client& theClient, net::Connection& theConn, const game::MatchData& theMatch )
         :   net::match::NetStage( theConn ),
-            client( theClient )
+            client( theClient ),
+            match( theMatch )
         {
             using namespace std::placeholders;
             
