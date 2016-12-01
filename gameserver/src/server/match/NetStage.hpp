@@ -18,6 +18,9 @@ namespace server
                 NetStage( Server& theServer, Client& theClient, net::Connection& theConn, Match& theMatch );
                 
                 virtual ClientTransition getTransition() const override;
+                
+                Match& getMatch();
+                const Match& getMatch() const;
             
             private:
                 Server& server;

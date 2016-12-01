@@ -50,8 +50,8 @@ namespace client
                     
                     for ( auto next : tile.next )
                     {
-                        sf::Vertex a( sf::Vector2f( ix * 50 + 25, iy * 50 + 25 ), sf::Color::Black );
-                        sf::Vertex b( sf::Vector2f( next.x * 50 + 35, next.y * 50 + 35 ), sf::Color( 150, 150, 150 ) );
+                        sf::Vertex a( sf::Vector2f( ix * 50 + 30, iy * 50 + 30 ), sf::Color::Black );
+                        sf::Vertex b( sf::Vector2f( next.x * 50 + 30, next.y * 50 + 30 ), sf::Color::White );
                         lines.push_back( a );
                         lines.push_back( b );
                     }

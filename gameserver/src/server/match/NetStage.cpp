@@ -31,6 +31,16 @@ namespace server
             return ClientTransition( ClientTransition::Match );
         }
         
+        Match& NetStage::getMatch()
+        {
+            return match;
+        }
+        
+        const Match& NetStage::getMatch() const
+        {
+            match;
+        }
+        
         /*void NetStage::handleRequestMatchList( const net::Packet* packet )
         {
             auto req = static_cast< const RequestMatchListPacket* >( packet );
