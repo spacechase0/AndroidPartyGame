@@ -4,6 +4,7 @@ gameserver/src/*.depend
 gameserver/src/*.layout
 gameserver/src/*_build_log.html
 gameserver/*.log
+sfml
 
 # Built application files
 *.apk
