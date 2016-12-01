@@ -12,7 +12,13 @@ namespace net
             std::unique_ptr< Packet > ret;
             switch ( id )
             {
-                //case PacketId::RequestMatchList: ret.reset( new RequestMatchListPacket() ); break;
+                case PacketId::MatchStartData:    ret.reset( new MatchStartDataPacket() ); break;
+                case PacketId::DiceRoll:          ret.reset( new DiceRollPacket() ); break;
+                case PacketId::TurnOrder:         ret.reset( new TurnOrderPacket() ); break;
+                case PacketId::MinigameStart:     ret.reset( new MinigameStartPacket() ); break;
+                case PacketId::MinigameInputData: ret.reset( new MinigameInputDataPacket() ); break;
+                case PacketId::MinigameStateData: ret.reset( new MinigameStateDataPacket() ); break;
+                case PacketId::MinigameEnd:       ret.reset( new MinigameEndPacket() ); break;
             }
             return ret;
         }
