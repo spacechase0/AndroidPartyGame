@@ -73,7 +73,7 @@ int main()
             
             if ( matches.size() == 0 )
             {
-                lobby->createMatch( game::MatchData( "My Match", 2 ) );
+                lobby->createMatch( game::MatchData( "My Match", "test", 2 ) );
                 hosting = true;
             }
             else

@@ -8,16 +8,24 @@ namespace net
     namespace match
     {
         MatchStartDataPacket::MatchStartDataPacket()
-        :   Packet( PacketId::MatchStartData )
+        :   MatchStartDataPacket( game::MapData() )
+        {
+        }
+    
+        MatchStartDataPacket::MatchStartDataPacket( const game::MapData& theMap )
+        :   Packet( PacketId::MatchStartData ),
+            map( theMap )
         {
         }
     
         void MatchStartDataPacket::read( Buffer& buffer )
         {
+            buffer >> map;
         }
         
         void MatchStartDataPacket::write( Buffer& buffer ) const
         {
+            buffer << map;
         }
     }
 }

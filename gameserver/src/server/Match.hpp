@@ -33,6 +33,7 @@ namespace server
             game::MatchData asData() const;
             
             std::string getName() const;
+            std::string getMapId() const;
             sf::Uint8 getMaxPlayers() const;
         
         private:
@@ -44,6 +45,7 @@ namespace server
             std::vector< Client* > players;
             
             std::string name;
+            std::string mapId;
             sf::Uint8 maxPlayers;
             
             sf::Thread thread;

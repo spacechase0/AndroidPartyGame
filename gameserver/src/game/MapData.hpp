@@ -29,9 +29,6 @@ namespace game
             sf::Vector2u getStart() const;
             
             sf::Vector2u findNamedTile( const std::string& name ) const;
-            
-            net::Buffer& operator >> ( net::Buffer& buffer );
-            net::Buffer& operator << ( net::Buffer& buffer ) const;
         
         private:
             std::string name;
@@ -48,7 +45,13 @@ namespace game
             {
                 return sf::Vector2u( idx % size.x, idx / size.x );
             }
+            
+            friend net::Buffer& operator >> ( net::Buffer& buffer, MapData& map );
+            friend net::Buffer& operator << ( net::Buffer& buffer, const MapData& map );
     };
+    
+    net::Buffer& operator >> ( net::Buffer& buffer, MapData& map );
+    net::Buffer& operator << ( net::Buffer& buffer, const MapData& map );
 }
 
 #endif // GAME_MAPDATA_HPP

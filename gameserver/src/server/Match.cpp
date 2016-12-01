@@ -5,6 +5,7 @@
 #include <SFML/System/Sleep.hpp>
 
 #include "game/MatchData.hpp"
+#include "net/match/MatchStartDataPacket.hpp"
 #include "net/lobby/MatchStatusPacket.hpp"
 #include "server/Client.hpp"
 #include "server/match/NetStage.hpp"
@@ -15,6 +16,7 @@ namespace server
     Match::Match( Server& theServer, const game::MatchData& data, Client* host )
     :   server( theServer ),
         name( data.name ),
+        mapId( data.map ),
         maxPlayers( data.maxPlayers ),
         thread( &Match::run, this )
     {
@@ -39,6 +41,7 @@ namespace server
         {
             player->send( packet );
             player->setNetStage( std::unique_ptr< net::NetStage >( new match::NetStage( server, ( * player ), ( * player->conn ), ( * this ) ) ) );
+            player->send( net::match::MatchStartDataPacket( server.maps[ mapId ] ) );
         }
     }
     
@@ -101,7 +104,7 @@ namespace server
     
     game::MatchData Match::asData() const
     {
-        game::MatchData data( name, maxPlayers );
+        game::MatchData data( name, mapId, maxPlayers );
         
         sf::Lock lock( playersM );
         for ( auto player : players )

@@ -163,15 +163,15 @@ namespace game
         return it->second;
     }
     
-    net::Buffer& MapData::operator >> ( net::Buffer& buffer )
+    net::Buffer& operator >> ( net::Buffer& buffer, MapData& map )
     {
-        buffer >> name >> size >> tiles >> namedTiles >> start;
+        buffer >> map.name >> map.size >> map.tiles >> map.namedTiles >> map.start;
         return buffer;
     }
     
-    net::Buffer& MapData::operator << ( net::Buffer& buffer ) const
+    net::Buffer& operator << ( net::Buffer& buffer, const MapData& map )
     {
-        buffer << name << size << tiles << namedTiles << start;
+        buffer << map.name << map.size << map.tiles << map.namedTiles << map.start;
         return buffer;
     }
 }

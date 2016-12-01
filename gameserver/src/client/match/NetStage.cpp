@@ -18,7 +18,15 @@ namespace client
         {
             using namespace std::placeholders;
             
-            //addHandler( PacketId::MatchList,   std::bind( &NetStage::handleMatchList,   this, _1 ) );
+            addHandler( PacketId::MatchStartData, std::bind( &NetStage::handleMatchStartData, this, _1 ) );
+        }
+        
+        void NetStage::handleMatchStartData( const net::Packet* packet )
+        {
+            auto data = static_cast< const MatchStartDataPacket* >( packet );
+            
+            client.log( "[INFO] Got match start data.\n" );
+            map = data->map;
         }
     }
 }
