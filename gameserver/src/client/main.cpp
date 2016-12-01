@@ -158,6 +158,7 @@ int main()
         int ac=12,as=1;
         int bc=26,bs=0;
         
+        bool minigame = false;
         while ( window.isOpen() )
         {
             sf::Event event;
@@ -182,17 +183,31 @@ int main()
                     }
                     else if ( c == 2)
                     {
+                        minigame = true;
+                        s = "";
+                    }
+                    else if ( c==3)
+                    {
+                        minigame = false;
+                    }
+                    else if ( c == 4)
+                    {
                         ax += 150;
                         ay += 100;
                         s = "5";
                         ac-=3;
                     }
-                    else if ( c == 3)
+                    else if ( c == 5)
                     {
                         bx -=100;
                         s = "2";
                         bc-=20;
                         bs+=1;
+                    }
+                    else if ( c == 6 )
+                    {
+                        minigame = true;
+                        s = "";
                     }
                     
                     ++c;
@@ -242,10 +257,33 @@ int main()
             t.setPosition(225,675);
             window.draw(t);
             
+            sf::RectangleShape shape;
+            shape.setOutlineColor( sf::Color::Black );
+            shape.setOutlineThickness( 3.f );
+            shape.setSize( sf::Vector2f( 75, 75 ) );
+            shape.setOrigin( 38, 38 );
+            shape.setPosition( 200,50+38 );
+            window.draw(shape);
+            
             t.setCharacterSize(50);
             t.setString(s);
-            t.setPosition(200-t.getLocalBounds().height/2,50);
+            t.setOrigin(t.getLocalBounds().width/2,0*t.getLocalBounds().height/2);
+            t.setPosition(200,50);
             window.draw(t);
+            
+            if (minigame )
+            {
+            shape.setFillColor( sf::Color( 200, 200, 200 ) );
+            shape.setSize( sf::Vector2f( 300, 150 ) );
+            shape.setPosition( 50, 150 );
+            shape.setOrigin( 0, 0 );
+            window.draw( shape );
+            
+            t.setString( "Minigame" );
+            t.setOrigin(t.getLocalBounds().width/2,t.getLocalBounds().height/2);
+            t.setPosition(200,225);
+            window.draw(t);
+            }
             
             window.display();
         }
