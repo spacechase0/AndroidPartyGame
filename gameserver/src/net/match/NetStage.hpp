@@ -1,11 +1,11 @@
-#ifndef NET_GAME_NETSTAGE_HPP
-#define NET_GAME_NETSTAGE_HPP
+#ifndef NET_MATCH_NETSTAGE_HPP
+#define NET_MATCH_NETSTAGE_HPP
 
 #include "net/NetStage.hpp"
 
 namespace net
 {
-    namespace game
+    namespace match
     {
         class NetStage : public net::NetStage
         {
@@ -17,4 +17,4 @@ namespace net
     }
 }
 
-#endif // NET_GAME_NETSTAGE_HPP
+#endif // NET_MATCH_NETSTAGE_HPP

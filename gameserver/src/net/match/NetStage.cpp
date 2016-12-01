@@ -1,11 +1,11 @@
-#include "net/game/NetStage.hpp"
+#include "net/match/NetStage.hpp"
 
-#include "net/game/Packets.hpp"
+#include "net/match/Packets.hpp"
 #include "net/PacketId.hpp"
 
 namespace net
 {
-    namespace game
+    namespace match
     {
         std::unique_ptr< Packet > NetStage::getPacketFromId( Packet::Id id ) const
         {
