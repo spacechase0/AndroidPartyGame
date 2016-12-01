@@ -17,6 +17,12 @@ namespace server
         thread( &Match::run, this )
     {
         players.push_back( host );
+        thread.launch();
+    }
+    
+    Match::~Match()
+    {
+        thread.wait();
     }
     
     const Client* Match::getHost() const
@@ -78,7 +84,7 @@ namespace server
     
     void Match::run()
     {
-        while ( server.isRunning() )
+        while ( server.isRunning() && players.size() > 0 )
         {
             {
                 sf::Lock lock( playersM );

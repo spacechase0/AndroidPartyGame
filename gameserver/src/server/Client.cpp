@@ -2,7 +2,10 @@
 
 #include "net/Connection.hpp"
 #include "server/ITransitioner.hpp"
+#include "server/lobby/NetStage.hpp"
+#include "server/Match.hpp"
 #include "server/prelogin/NetStage.hpp"
+#include "server/Server.hpp"
 
 namespace server
 {
@@ -15,6 +18,19 @@ namespace server
     
     Client::~Client()
     {
+        auto lobbyStage = dynamic_cast< lobby::NetStage* >( stage.get() );
+        if ( lobbyStage && lobbyStage->current )
+        {
+            lobbyStage->current->playerLeft( this );
+            if ( lobbyStage->current->getPlayers().size() == 0 )
+            {
+                server.removeMatch( lobbyStage->current );
+            }
+            lobbyStage->current = nullptr;
+            
+            server.log( "[INFO] Client $ left the match.\n", user );
+        }
+        server.log( "[INFO] Client $ disconnected.\n", user );
     }
     
     ClientTransition Client::update()

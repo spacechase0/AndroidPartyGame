@@ -20,6 +20,7 @@ namespace server
     {
         public:
             Match( Server& theServer, const game::MatchData& data, Client* host );
+            ~Match();
             
             const Client* getHost() const;
             std::vector< Client* > getPlayers() const;
