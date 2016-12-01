@@ -15,7 +15,7 @@ namespace net
         
         JoinMatchPacket::JoinMatchPacket( const game::MatchData& match )
         :   Packet( PacketId::JoinMatch ),
-            host( match.players[ 0 ] )
+            host( match.players.size() > 0 ? match.players[ 0 ] : "" )
         {
         }
     
