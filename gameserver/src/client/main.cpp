@@ -79,7 +79,7 @@ int main()
         };
         lobby->getMatchList();
         
-        for ( int i = 0; i < 10; ++i )
+        while ( lobby->lastStatus != net::lobby::MatchStatusCode::StartMatch )
         {
             c.update();
             sf::sleep( sf::seconds( 1 ) );

@@ -49,7 +49,22 @@ namespace client
         void NetStage::handleMatchStatus( const net::Packet* packet )
         {
             auto status = static_cast< const MatchStatusPacket* >( packet );
-            client.log("something match status $\n", status->status);
+            lastStatus = status->status;
+            switch ( status->status )
+            {
+                case net::lobby::MatchStatusCode::MatchNotExist: client.log( "[INFO] The match we wanted to join doesn't exist.\n" ); break;
+                case net::lobby::MatchStatusCode::MatchWasFull: client.log( "[INFO] The match we wanted to join is full.\n" ); break;
+                case net::lobby::MatchStatusCode::KickedFromMatch:
+                    client.log( "[INFO] We were kicked from the match.\n" );
+                    current = game::MatchData();
+                    break;
+                case net::lobby::MatchStatusCode::JoinedMatch:
+                    client.log( "[INFO] We joined the match.\n" );
+                    current = status->match;
+                    break;break;
+                case net::lobby::MatchStatusCode::StartMatch: client.log( "[INFO] The match started!\n" ); break;
+                default: break;
+            }
         }
     }
 }

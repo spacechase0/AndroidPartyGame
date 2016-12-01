@@ -3,7 +3,9 @@
 
 #include <vector>
 
+#include "game/MatchData.hpp"
 #include "net/lobby/NetStage.hpp"
+#include "net/lobby/MatchStatusCode.hpp"
 
 namespace game
 {
@@ -20,6 +22,9 @@ namespace client
         {
             public:
                 NetStage( Client& theClient, net::Connection& theConn );
+                
+                net::lobby::MatchStatusCode lastStatus = net::lobby::MatchStatusCode::NONE;
+                game::MatchData current;
                 
                 void getMatchList();
                 void createMatch( const game::MatchData& match );
