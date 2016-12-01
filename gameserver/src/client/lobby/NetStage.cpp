@@ -40,6 +40,12 @@ namespace client
             client.send( JoinMatchPacket( match ) );
         }
         
+        void NetStage::startMatch()
+        {
+            client.log( "[INFO] Starting the match...\n" );
+            client.send( MatchStatusPacket( MatchStatusCode::StartMatch ) );
+        }
+        
         void NetStage::handleMatchList( const net::Packet* packet )
         {
             auto matchList = static_cast< const MatchListPacket* >( packet );
@@ -53,24 +59,24 @@ namespace client
             lastStatus = status->status;
             switch ( status->status )
             {
-                case net::lobby::MatchStatusCode::MatchNotExist: client.log( "[INFO] The match we wanted to join doesn't exist.\n" ); break;
-                case net::lobby::MatchStatusCode::MatchWasFull: client.log( "[INFO] The match we wanted to join is full.\n" ); break;
-                case net::lobby::MatchStatusCode::KickedFromMatch:
+                case MatchStatusCode::MatchNotExist: client.log( "[INFO] The match we wanted to join doesn't exist.\n" ); break;
+                case MatchStatusCode::MatchWasFull: client.log( "[INFO] The match we wanted to join is full.\n" ); break;
+                case MatchStatusCode::KickedFromMatch:
                     client.log( "[INFO] We were kicked from the match.\n" );
                     current = game::MatchData();
                     break;
-                case net::lobby::MatchStatusCode::JoinedMatch:
+                case MatchStatusCode::JoinedMatch:
                     client.log( "[INFO] We joined the match.\n" );
                     current = status->match;
                     break;
-                case net::lobby::MatchStatusCode::MatchStatus:
+                case MatchStatusCode::MatchStatus:
                     client.log( "[INFO] Something changed about the match:\n" );
                     current = status->match;
                     client.log( "[INFO] \"$\" ($/$):\n", current.name, current.players.size(), static_cast< int >( current.maxPlayers ) );
                     for ( auto player : current.players )
                         client.log( "[INFO] \t$\n", player );
                     break;
-                case net::lobby::MatchStatusCode::StartMatch:
+                case MatchStatusCode::StartMatch:
                     {
                         client.log( "[INFO] The match started!\n" );
                         client.setNetStage( std::unique_ptr< net::NetStage >( new client::match::NetStage( client, conn, current ) ) );

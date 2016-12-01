@@ -60,6 +60,7 @@ int main()
     {
         client::lobby::NetStage* lobby = dynamic_cast< client::lobby::NetStage* >( c.getNetStage() );
         
+        bool hosting = false;
         lobby->onMatchList = [&]( const std::vector< game::MatchData >& matches )
         {
             c.log( "[INFO] Obtained $ matches: \n", matches.size() );
@@ -73,6 +74,7 @@ int main()
             if ( matches.size() == 0 )
             {
                 lobby->createMatch( game::MatchData( "My Match", 2 ) );
+                hosting = true;
             }
             else
             {
@@ -87,13 +89,25 @@ int main()
             waiting = false;
         };
         
+        bool started = false;
         while ( waiting )
         {
             c.update();
+            
+            if ( hosting && lobby->current.players.size() == lobby->current.maxPlayers )
+            {
+                if ( !started )
+                {
+                    lobby->startMatch();
+                    started = true;
+                }
+            }
+            
             sf::sleep( sf::seconds( 1 ) );
         }
     }
     {
+        c.update();
         client::match::NetStage* match = dynamic_cast< client::match::NetStage* >( c.getNetStage() );
         if ( match == nullptr )
             c.log( "PROBLEMS!!!" );

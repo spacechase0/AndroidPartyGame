@@ -33,8 +33,11 @@ namespace server
         
         sf::Lock lock( playersM );
         matchStarted = true;
+        
+        net::lobby::MatchStatusPacket packet( net::lobby::MatchStatusCode::StartMatch, asData() );
         for ( auto player : players )
         {
+            player->send( packet );
             player->setNetStage( std::unique_ptr< net::NetStage >( new match::NetStage( server, ( * player ), ( * player->conn ), ( * this ) ) ) );
         }
     }
