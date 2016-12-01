@@ -124,9 +124,17 @@ int main()
                     window.close();
             }
             
+            c.update();
+            
             window.clear( sf::Color::White );
             
-            match->match.drawBoard( window );
+            sf::View view = window.getDefaultView();
+            view.setCenter( match->map.getSize().x * 50 / 2, match->map.getSize().y * 50 / 2 );
+            window.setView( view );
+            {
+                match->match.drawBoard( window );
+            }
+            window.setView( window.getDefaultView() );
             
             window.display();
         }
