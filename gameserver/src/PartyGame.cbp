@@ -143,8 +143,13 @@
 			<Option target="Client (Debug)" />
 			<Option target="Client (Release)" />
 		</Unit>
+		<Unit filename="game/MapData.cpp" />
+		<Unit filename="game/MapData.hpp" />
 		<Unit filename="game/MatchData.cpp" />
 		<Unit filename="game/MatchData.hpp" />
+		<Unit filename="game/TileData.hpp" />
+		<Unit filename="game/TileData.hpp" />
+		<Unit filename="game/UserData.hpp" />
 		<Unit filename="net/Buffer.cpp" />
 		<Unit filename="net/Buffer.hpp" />
 		<Unit filename="net/Connection.cpp" />

@@ -33,6 +33,12 @@ namespace net
     {
     }
     
+    Buffer& Buffer::operator >> ( bool& b )
+    {
+        b = ( readValue< sf::Uint8 >() != 0 );
+        return ( * this );
+    }
+    
     Buffer& Buffer::operator >> ( sf::Uint8& i )
     {
         read( ss, i );
@@ -77,6 +83,12 @@ namespace net
         str.resize( len );
         ss.read( &str[ 0 ], len );
         
+        return ( * this );
+    }
+    
+    Buffer& Buffer::operator << ( bool b )
+    {
+        ( * this ) << static_cast< sf::Uint8 >( b ? 1 : 0 );
         return ( * this );
     }
     
