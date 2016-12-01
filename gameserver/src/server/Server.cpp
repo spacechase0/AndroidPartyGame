@@ -50,7 +50,7 @@ namespace server
     {
         sf::Lock lock( matchesM );
         for ( auto& match : matches )
-            if ( match->getHost()->user == host )
+            if ( match->getPlayers().size() > 0 && match->getHost()->user == host )
                 return match.get();
         
         return nullptr;
