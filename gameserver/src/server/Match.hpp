@@ -23,6 +23,7 @@ namespace server
             ~Match();
             
             void start();
+            bool hasStarted() const;
             
             const Client* getHost() const;
             std::vector< Client* > getPlayers() const;

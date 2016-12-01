@@ -50,7 +50,7 @@ namespace server
     {
         sf::Lock lock( matchesM );
         for ( auto& match : matches )
-            if ( match->getPlayers().size() > 0 && match->getHost()->user == host )
+            if ( !match->hasStarted() && match->getPlayers().size() > 0 && match->getHost()->user == host )
                 return match.get();
         
         return nullptr;
@@ -64,7 +64,8 @@ namespace server
         ret.reserve( matches.size() );
         
         for ( const auto& match : matches )
-            ret.push_back( match->asData() );
+            if ( !match->hasStarted() )
+                ret.push_back( match->asData() );
         
         return ret;
     }

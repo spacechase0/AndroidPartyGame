@@ -42,6 +42,11 @@ namespace server
         }
     }
     
+    bool Match::hasStarted() const
+    {
+        return matchStarted;
+    }
+    
     const Client* Match::getHost() const
     {
         sf::Lock lock( playersM );
