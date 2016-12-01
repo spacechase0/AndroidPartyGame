@@ -6,6 +6,7 @@
 #include <SFML/System/Time.hpp>
 #include <SFML/System/Sleep.hpp>
 
+#include "game/MapData.hpp"
 #include "game/MatchData.hpp"
 #include "net/Connection.hpp"
 #include "server/Client.hpp"
@@ -21,6 +22,14 @@ namespace server
         lobby( * this ),
         listenerThread( &Server::listen, this )
     {
+        log( "[INFO] Loading maps...\n" );
+        std::vector< std::string > mapNames = { "test" };
+        for ( auto mapName : mapNames )
+        {
+            log( "[INFO] \tmaps/$.txt as $\n", mapName, mapName );
+            maps[ mapName ] = game::MapData();
+            maps[ mapName ].load( "maps/" + mapName + ".txt" );
+        }
     }
     
     Server::~Server()

@@ -2,6 +2,7 @@
 #define SERVER_SERVER_HPP
 
 #include <list>
+#include <map>
 #include <set>
 #include <SFML/Network/TcpListener.hpp>
 #include <SFML/System/Mutex.hpp>
@@ -13,6 +14,7 @@
 namespace game
 {
     class MatchData;
+    class MapData;
 }
 
 namespace server
@@ -29,6 +31,8 @@ namespace server
             
             util::Logger log;
             std::unique_ptr< IUserDatabase > users;
+            std::map< std::string, game::MapData > maps;
+            
             void addMatch( std::unique_ptr< Match > match );
             void removeMatch( Match* match );
             Match* findMatch( const std::string& host );

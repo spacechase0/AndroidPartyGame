@@ -1,8 +1,8 @@
 #include "Util.hpp"
 
-std::ifstream&& getResourceFile( const std::string& name )
+void loadResourceFile( std::ifstream& file, const std::string& name )
 {
-    return std::move( std::ifstream( name ) );
+    file.open( name );
 }
 
 std::vector< std::string > parseCommand( const std::string& str )

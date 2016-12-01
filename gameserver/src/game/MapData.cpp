@@ -45,7 +45,8 @@ namespace game
 {
     bool MapData::load( const std::string& filename )
     {
-        auto file = getResourceFile( filename );
+        std::ifstream file;
+        loadResourceFile( file, filename );
         if ( !file ) return false;
         
         std::getline( file, name );
