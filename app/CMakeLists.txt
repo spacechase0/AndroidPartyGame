@@ -4,42 +4,52 @@
 
 cmake_minimum_required(VERSION 3.4.1)
 
-# Creates and names a library, sets it as either STATIC
-# or SHARED, and provides the relative paths to its source code.
-# You can define multiple libraries, and CMake builds it for you.
-# Gradle automatically packages shared libraries with your APK.
+add_library( kingdomparty-native SHARED
+src/main/cpp/Util.cpp
+src/main/cpp/client/Client.cpp
+src/main/cpp/client/lobby/NetStage.cpp
+src/main/cpp/client/main.cpp
+src/main/cpp/client/match/NetStage.cpp
+src/main/cpp/client/prelogin/NetStage.cpp
+src/main/cpp/game/MatchData.cpp
+src/main/cpp/net/Buffer.cpp
+src/main/cpp/net/Connection.cpp
+src/main/cpp/net/NetStage.cpp
+src/main/cpp/net/Packet.cpp
+src/main/cpp/net/lobby/CreateMatchPacket.cpp
+src/main/cpp/net/lobby/JoinMatchPacket.cpp
+src/main/cpp/net/lobby/MatchListPacket.cpp
+src/main/cpp/net/lobby/MatchStatusPacket.cpp
+src/main/cpp/net/lobby/NetStage.cpp
+src/main/cpp/net/lobby/RequestMatchListPacket.cpp
+src/main/cpp/net/match/NetStage.cpp
+src/main/cpp/net/prelogin/LoginPacket.cpp
+src/main/cpp/net/prelogin/LoginStatusPacket.cpp
+src/main/cpp/net/prelogin/NetStage.cpp
+src/main/cpp/net/prelogin/ProtocolVersionPacket.cpp
+src/main/cpp/net/prelogin/RegisterPacket.cpp
+src/main/cpp/util/Base64.cpp
+src/main/cpp/util/Crc32.cpp
+src/main/cpp/util/Endian.cpp
+src/main/cpp/util/File.cpp
+src/main/cpp/util/Logger.cpp
+src/main/cpp/util/Md5.cpp
+src/main/cpp/util/String.cpp
+)
+include_directories(src/main/cpp)
+find_library(sfsys sfml-system)
+find_library(sfwin sfml-window)
+find_library(sfgraph sfml-graphics)
+find_library(sfaud sfml-audio)
+find_library(sfnet sfml-network)
+find_library(sfmain sfml-main)
+find_library(sfact sfml-activity)
 
-add_library( # Sets the name of the library.
-             native-lib
+target_link_libraries( kingdomparty-native $(sfsys) )
+target_link_libraries( kingdomparty-native $(sfwin) )
+target_link_libraries( kingdomparty-native $(sfgraph) )
+target_link_libraries( kingdomparty-native $(sfaud) )
+target_link_libraries( kingdomparty-native $(sfnet) )
+target_link_libraries( kingdomparty-native $(sfmain) )
+target_link_libraries( kingdomparty-native $(sfact) )
 
-             # Sets the library as a shared library.
-             SHARED
-
-             # Provides a relative path to your source file(s).
-             # Associated headers in the same location as their source
-             # file are automatically included.
-             src/main/cpp/native-lib.cpp )
-
-# Searches for a specified prebuilt library and stores the path as a
-# variable. Because system libraries are included in the search path by
-# default, you only need to specify the name of the public NDK library
-# you want to add. CMake verifies that the library exists before
-# completing its build.
-
-find_library( # Sets the name of the path variable.
-              log-lib
-
-              # Specifies the name of the NDK library that
-              # you want CMake to locate.
-              log )
-
-# Specifies libraries CMake should link to your target library. You
-# can link multiple libraries, such as libraries you define in the
-# build script, prebuilt third-party libraries, or system libraries.
-
-target_link_libraries( # Specifies the target library.
-                       native-lib
-
-                       # Links the target library to the log library
-                       # included in the NDK.
-                       ${log-lib} )
