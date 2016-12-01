@@ -2,6 +2,8 @@ gameserver/obj
 gameserver/*.exe
 gameserver/src/*.depend
 gameserver/src/*.layout
+gameserver/src/*_build_log.html
+gameserver/*.log
 
 # Built application files
 *.apk
