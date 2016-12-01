@@ -73,7 +73,7 @@ namespace server
                 }
                 else
                 {
-                    server.log( "[INFO] Client $ attempted to join a full match called \"$\".\n", client.user, current->getName() );
+                    server.log( "[INFO] Client $ attempted to join a full match called \"$\".\n", client.user, match->getName() );
                     toSend.status = MatchStatusCode::MatchWasFull;
                 }
             }
