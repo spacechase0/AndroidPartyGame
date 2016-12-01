@@ -81,7 +81,7 @@ namespace server
     
     void Server::run()
     {
-        lobbyThread.launch();
+        //lobbyThread.launch();
         listenerThread.launch();
         
         while ( isRunning() )
@@ -110,6 +110,13 @@ namespace server
                 }
             }
             users->update();
+            //*
+            lobby.update();
+            for ( auto& match : matches )
+            {
+                match->update();
+            }
+            //*/
             
             sf::sleep( sf::milliseconds( 10 ) );
         }

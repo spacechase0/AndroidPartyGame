@@ -50,6 +50,9 @@ namespace server
             
             sf::Thread thread;
             void run();
+            void update();
+            
+            friend class Server;
     };
 }
 

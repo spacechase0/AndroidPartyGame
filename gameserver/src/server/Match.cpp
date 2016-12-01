@@ -21,7 +21,7 @@ namespace server
         thread( &Match::run, this )
     {
         players.push_back( host );
-        thread.launch();
+        //thread.launch();
     }
     
     Match::~Match()
@@ -127,23 +127,26 @@ namespace server
     {
         while ( server.isRunning() && players.size() > 0 )
         {
-            {
-                sf::Lock lock( playersM );
-                auto it = players.begin();
-                while ( it != players.end() )
-                {
-                    Client& client = ( * ( * it ) );
-                    auto trans = client.update();
-                    
-                    if ( !client.isConnected() )
-                    {
-                        it = players.erase( it );
-                    }
-                    else ++it;
-                }
-            }
+            update();
             
             sf::sleep( sf::milliseconds( 10 ) );
+        }
+    }
+    
+    void Match::update()
+    {
+        sf::Lock lock( playersM );
+        auto it = players.begin();
+        while ( it != players.end() )
+        {
+            Client& client = ( * ( * it ) );
+            auto trans = client.update();
+            
+            if ( !client.isConnected() )
+            {
+                it = players.erase( it );
+            }
+            else ++it;
         }
     }
 }
