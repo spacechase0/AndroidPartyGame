@@ -37,10 +37,10 @@ namespace
                 break;
         
         if ( end <= beg ) return "";
-        return str.substr( beg, end - beg );
+        return str.substr( beg, end - beg + 1 );
     }
 }
-
+#include"IOSTREAM"
 namespace game
 {
     bool MapData::load( const std::string& filename )
@@ -92,6 +92,7 @@ namespace game
                 }
                 prevTile = nullptr;
                 
+                bool manualNext = false;
                 if ( tokens.size() >= 4 )
                 {
                     auto attrs = util::tokenize( tokens[ 3 ], " " );
@@ -106,11 +107,16 @@ namespace game
                         else if ( name == "name" )
                             namedTiles[ val ] = pos;
                         else if ( name == "next" )
+                        {
                             toSetNext.push_back( { pos, util::tokenize( val, "/" ) } );
+                            manualNext = true;
+                        }
                     }
                 }
                 
                 tiles[ tileIndex( pos.x, pos.y ) ] = tile;
+                if ( !manualNext )
+                    prevTile = &tiles[ tileIndex( pos.x, pos.y ) ];
             }
             else
             {

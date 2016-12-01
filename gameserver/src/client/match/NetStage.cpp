@@ -14,7 +14,8 @@ namespace client
         NetStage::NetStage( Client& theClient, net::Connection& theConn, const game::MatchData& theMatch )
         :   net::match::NetStage( theConn ),
             client( theClient ),
-            match( theMatch )
+            matchInfo( theMatch ),
+            match( theClient, ( * this ) )
         {
             using namespace std::placeholders;
             

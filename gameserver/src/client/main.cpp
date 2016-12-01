@@ -126,7 +126,7 @@ int main()
             
             window.clear( sf::Color::White );
             
-            
+            match->match.drawBoard( window );
             
             window.display();
         }

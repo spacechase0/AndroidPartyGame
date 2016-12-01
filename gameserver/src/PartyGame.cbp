@@ -127,6 +127,14 @@
 			<Option target="Client (Debug)" />
 			<Option target="Client (Release)" />
 		</Unit>
+		<Unit filename="client/match/Match.cpp">
+			<Option target="Client (Debug)" />
+			<Option target="Client (Release)" />
+		</Unit>
+		<Unit filename="client/match/Match.hpp">
+			<Option target="Client (Debug)" />
+			<Option target="Client (Release)" />
+		</Unit>
 		<Unit filename="client/match/NetStage.cpp">
 			<Option target="Client (Debug)" />
 			<Option target="Client (Release)" />

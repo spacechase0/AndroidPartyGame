@@ -3,6 +3,7 @@
 
 #include <vector>
 
+#include "client/match/Match.hpp"
 #include "game/MapData.hpp"
 #include "game/MatchData.hpp"
 #include "net/match/NetStage.hpp"
@@ -18,7 +19,8 @@ namespace client
             public:
                 NetStage( Client& theClient, net::Connection& theConn, const game::MatchData& theMatch );
                 
-                game::MatchData match;
+                Match match;
+                game::MatchData matchInfo;
                 game::MapData map;
             
             private:
