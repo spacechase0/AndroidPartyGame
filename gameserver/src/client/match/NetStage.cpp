@@ -19,6 +19,9 @@ namespace client
         {
             using namespace std::placeholders;
             
+            // Can't set this in Match constructor since this would still be constructing
+            onMatchStartData = [ this ](){ match.cachedBoard = false; };
+            
             addHandler( PacketId::MatchStartData, std::bind( &NetStage::handleMatchStartData, this, _1 ) );
         }
         
@@ -28,6 +31,9 @@ namespace client
             
             client.log( "[INFO] Got match start data.\n" );
             map = data->map;
+            
+            if ( onMatchStartData )
+                onMatchStartData();
         }
     }
 }

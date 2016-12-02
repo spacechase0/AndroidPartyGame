@@ -24,8 +24,18 @@ namespace client
         
         void Match::drawBoard( sf::RenderWindow& window )
         {
-            std::vector< sf::Vertex > lines;
-            std::list< sf::CircleShape > spots;
+            if ( !cachedBoard )
+                makeBoardCache();
+            
+            window.draw( &lines[ 0 ], lines.size(), sf::PrimitiveType::Lines );
+            for ( const auto& spot : spots )
+                window.draw( spot );
+        }
+        
+        void Match::makeBoardCache()
+        {
+            lines.clear();
+            spots.clear();
             
             for ( std::size_t ix = 0; ix < netStage.map.getSize().x; ++ix )
             {
@@ -58,11 +68,7 @@ namespace client
                 }
             }
             
-            client.log("draw $ $ $ $ $\n", lines.size(), spots.size(), netStage.map.getName(), netStage.map.getSize().x, netStage.map.getSize().y);
-            
-            window.draw( &lines[ 0 ], lines.size(), sf::PrimitiveType::Lines );
-            for ( const auto& spot : spots )
-                window.draw( spot );
+            cachedBoard = true;
         }
     }
 }

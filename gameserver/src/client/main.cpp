@@ -125,6 +125,11 @@ int main()
             }
             
             c.update();
+            if ( !c.isConnected() )
+            {
+                c.log( "[INFO] Lost connection.\n" );
+                window.close();
+            }
             
             window.clear( sf::Color::White );
             

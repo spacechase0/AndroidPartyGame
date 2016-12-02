@@ -1,6 +1,7 @@
 #ifndef CLIENT_MATCH_NETSTAGE_HPP
 #define CLIENT_MATCH_NETSTAGE_HPP
 
+#include <functional>
 #include <vector>
 
 #include "client/match/Match.hpp"
@@ -22,6 +23,8 @@ namespace client
                 Match match;
                 game::MatchData matchInfo;
                 game::MapData map;
+                
+                std::function< void () > onMatchStartData;
             
             private:
                 Client& client;

@@ -1,6 +1,11 @@
 #ifndef CLIENT_MATCH_MATCH_HPP
 #define CLIENT_MATCH_MATCH_HPP
 
+#include <list>
+#include <SFML/Graphics/CircleShape.hpp>
+#include <SFML/Graphics/Vertex.hpp>
+#include <vector>
+
 namespace sf
 {
     class RenderWindow;
@@ -24,6 +29,13 @@ namespace client
             private:
                 Client& client;
                 NetStage& netStage;
+                
+                std::vector< sf::Vertex > lines;
+                std::list< sf::CircleShape > spots;
+                bool cachedBoard = false;
+                void makeBoardCache();
+                
+                friend class NetStage;
         };
     }
 }
