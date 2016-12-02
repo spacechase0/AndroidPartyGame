@@ -8,6 +8,7 @@
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Vertex.hpp>
+#include <SFML/System/Clock.hpp>
 #include <vector>
 
 namespace sf
@@ -30,6 +31,7 @@ namespace client
                 Match( Client& theClient, NetStage& theNetStage );
                 
                 void doEvent( const sf::Event& event );
+                void update();
                 
                 void drawBoard( sf::RenderWindow& window );
                 void drawUi( sf::RenderWindow& window );
@@ -56,6 +58,8 @@ namespace client
                 sf::Text dieFg;
                 sf::Uint8 dieNum = 0xFF;
                 bool rollingDie = false;
+                
+                sf::Clock lastMove;
                 
                 friend class NetStage;
         };

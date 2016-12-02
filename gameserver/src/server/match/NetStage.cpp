@@ -23,7 +23,7 @@ namespace server
         {
             using namespace std::placeholders;
             
-            //addHandler( PacketId::RequestMatchList, std::bind( &NetStage::handleRequestMatchList, this, _1 ) );
+            addHandler( PacketId::DiceRoll, std::bind( &NetStage::handleDiceRoll, this, _1 ) );
         }
         
         ClientTransition NetStage::getTransition() const
@@ -41,10 +41,10 @@ namespace server
             return match;
         }
         
-        /*void NetStage::handleRequestMatchList( const net::Packet* packet )
+        void NetStage::handleDiceRoll( const net::Packet* packet )
         {
-            auto req = static_cast< const RequestMatchListPacket* >( packet );
-            client.send( MatchListPacket( server.getMatchData() ) );
-        }*/
+            auto req = static_cast< const DiceRollPacket* >( packet );
+            
+        }
     }
 }

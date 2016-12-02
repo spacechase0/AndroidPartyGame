@@ -137,6 +137,7 @@ int main()
                 c.log( "[INFO] Lost connection.\n" );
                 window.close();
             }
+            match->match.update();
             
             window.clear( sf::Color::White );
             

@@ -41,6 +41,22 @@ namespace client
             dieFg.setCharacterSize( 50 );
         }
         
+        void Match::update()
+        {
+            if ( dieNum != 0xFF && lastMove.getElapsedTime().asSeconds() >= TIME_MOVE )
+            {
+                --dieNum;
+                netStage.players[ currentTurn ].move( netStage.map );
+                
+                if ( dieNum == 0xFF )
+                {
+                    currentTurn = ( currentTurn + 1 ) % netStage.players.size();
+                }
+                
+                lastMove.restart();
+            }
+        }
+        
         void Match::doEvent( const sf::Event& event )
         {
             if ( event.type == sf::Event::MouseButtonPressed )
@@ -93,6 +109,7 @@ namespace client
         {
             rollingDie = false;
             dieNum = num;
+            lastMove.restart();
         }
         
         void Match::makeBoardCache()

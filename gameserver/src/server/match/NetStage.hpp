@@ -27,7 +27,7 @@ namespace server
                 Client& client;
                 Match& match;
                 
-                //void handleRequestMatchList( const net::Packet* packet );
+                void handleDiceRoll( const net::Packet* packet );
         };
     }
 }

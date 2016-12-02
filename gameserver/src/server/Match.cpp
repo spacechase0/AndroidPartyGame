@@ -5,7 +5,7 @@
 #include <SFML/System/Sleep.hpp>
 
 #include "game/MatchData.hpp"
-#include "net/match/MatchStartDataPacket.hpp"
+#include "net/match/Packets.hpp"
 #include "net/lobby/MatchStatusPacket.hpp"
 #include "server/Client.hpp"
 #include "server/match/NetStage.hpp"
@@ -13,6 +13,8 @@
 
 namespace server
 {
+    using namespace net::match;
+    
     Match::Match( Server& theServer, const game::MatchData& data, Client* host )
     :   server( theServer ),
         name( data.name ),
@@ -37,7 +39,7 @@ namespace server
         matchStarted = true;
         
         const auto& mapData = server.maps[ mapId ];
-        std::vector< game::PlayerData > playerData;
+        playerData.clear();
         for ( const auto& player : players )
         {
             game::PlayerData data( player->user );
@@ -112,6 +114,23 @@ namespace server
         }
     }
     
+    void Match::playerRolledDie( Client* client )
+    {
+        sf::Lock lock( playersM );
+        auto it = std::find( players.begin(), players.end(), client );
+        if ( it == players.end() || it - players.begin() != currentTurn || roll != 0xFF )
+            return;
+        
+        roll = rand() % 6;
+        DiceRollPacket packet( roll );
+        for ( auto& player : players )
+        {
+            player->send( packet );
+        }
+        
+        lastMove.restart();
+    }
+    
     game::MatchData Match::asData() const
     {
         game::MatchData data( name, mapId, maxPlayers );
@@ -157,6 +176,20 @@ namespace server
                 it = players.erase( it );
             }
             else ++it;
+        }
+        
+        if ( roll != 0xFF && lastMove.getElapsedTime().asSeconds() >= TIME_MOVE )
+        {
+            --roll;
+            playerData[ currentTurn ].move( server.maps[ mapId ] );
+            server.log("[INFO] $ moved to ($,$)\n", playerData[currentTurn].username,playerData[currentTurn].pos.x, playerData[currentTurn].pos.y);
+            
+            if ( roll == 0xFF )
+            {
+                currentTurn = ( currentTurn + 1 ) % playerData.size();
+            }
+            
+            lastMove.restart();
         }
     }
 }

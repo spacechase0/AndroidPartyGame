@@ -1,6 +1,7 @@
 #ifndef SERVER_MATCH_HPP
 #define SERVER_MATCH_HPP
 
+#include <SFML/System/Clock.hpp>
 #include <SFML/System/Mutex.hpp>
 #include <SFML/System/Thread.hpp>
 #include <string>
@@ -9,6 +10,7 @@
 namespace game
 {
     class MatchData;
+    class PlayerData;
 }
 
 namespace server
@@ -29,6 +31,8 @@ namespace server
             std::vector< Client* > getPlayers() const;
             bool tryToJoin( Client* client );
             void playerLeft( Client* client );
+            
+            void playerRolledDie( Client* client );
             
             game::MatchData asData() const;
             
@@ -51,6 +55,13 @@ namespace server
             sf::Thread thread;
             void run();
             void update();
+            
+            int currentTurn = 0;
+            sf::Uint8 roll = 0xFF;
+            sf::Clock lastMove;
+            sf::Clock lastRoll;
+            
+            std::vector< game::PlayerData > playerData;
             
             friend class Server;
     };

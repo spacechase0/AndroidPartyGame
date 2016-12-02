@@ -12,6 +12,8 @@ namespace net
 
 namespace game
 {
+    class MapData;
+    
     struct PlayerData : public UserData
     {
         PlayerData();
@@ -20,6 +22,8 @@ namespace game
         sf::Uint8 stars = 0;
         sf::Uint16 coins = 0;
         sf::Vector2u pos = sf::Vector2u( 0, 0 );
+        
+        void move( const MapData& map );
     };
     
     net::Buffer& operator >> ( net::Buffer& buffer, PlayerData& player );
