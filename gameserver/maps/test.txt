@@ -8,7 +8,7 @@ TILES
 # attr: name=<...>
 
 # Up to first intersection
-0,0,b,start next=start
+0,0,b,start
 1,0,b
 2,0,b
 3,0,r
