@@ -48,8 +48,9 @@ namespace client
                 --dieNum;
                 netStage.players[ currentTurn ].move( netStage.map );
                 
-                if ( dieNum == 0xFF )
+                if ( dieNum == 0 )
                 {
+                    dieNum = 0xFF;
                     currentTurn = ( currentTurn + 1 ) % netStage.players.size();
                 }
                 
@@ -61,7 +62,7 @@ namespace client
         {
             if ( event.type == sf::Event::MouseButtonPressed )
             {
-                if ( currentTurn == myTurn && dieBg.getGlobalBounds().contains( event.mouseButton.x, event.mouseButton.y ) )
+                if ( currentTurn == myTurn && !rollingDie && dieNum == 0xFF dieBg.getGlobalBounds().contains( event.mouseButton.x, event.mouseButton.y ) )
                 {
                     rollingDie = true;
                     dieNum = rand() % 6;
@@ -113,7 +114,7 @@ namespace client
                     dieNum = ( dieNum + 1 ) % 6;
                 }
                 
-                dieFg.setString( util::toString( static_cast< int >( dieNum ) ) );
+                dieFg.setString( util::toString( dieNum == 0xFF ? "" : static_cast< int >( dieNum ) ) );
                 dieFg.setOrigin( dieFg.getLocalBounds().width / 2, dieFg.getLocalBounds().height / 4 * 3 );
                 dieFg.setPosition( dieBg.getPosition() );
                 window.draw( dieFg );
