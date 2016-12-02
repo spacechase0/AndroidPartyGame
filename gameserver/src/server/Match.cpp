@@ -36,12 +36,22 @@ namespace server
         sf::Lock lock( playersM );
         matchStarted = true;
         
+        const auto& mapData = server.maps[ mapId ];
+        std::vector< game::PlayerData > playerData;
+        for ( const auto& player : players )
+        {
+            game::PlayerData data( player->user );
+            data.pos = mapData.getStart();
+            playerData.push_back( data );
+        }
+        
         net::lobby::MatchStatusPacket packet( net::lobby::MatchStatusCode::StartMatch, asData() );
+        net::match::MatchStartDataPacket packet2( mapData, playerData );
         for ( auto player : players )
         {
             player->send( packet );
             player->setNetStage( std::unique_ptr< net::NetStage >( new match::NetStage( server, ( * player ), ( * player->conn ), ( * this ) ) ) );
-            player->send( net::match::MatchStartDataPacket( server.maps[ mapId ] ) );
+            player->send( packet2 );
         }
     }
     

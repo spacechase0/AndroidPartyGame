@@ -1,3 +1,5 @@
+#include <cstdlib>
+#include <ctime>
 #include <SFML/System/Sleep.hpp>
 #include <SFML/Graphics.hpp>
 
@@ -11,6 +13,8 @@ using namespace client;
 
 int main()
 {
+    std::srand( std::time( nullptr ) );
+    
     Client c;
     if ( !c.connect() )
     {
@@ -23,8 +27,10 @@ int main()
         bool inPreLogin = true;
         c.onStageChange = [ &inPreLogin ](){ inPreLogin = false; };
         
+        std::string username = "user" + util::toString( rand() );
+        
         client::prelogin::NetStage* prelogin = dynamic_cast< client::prelogin::NetStage* >( c.getNetStage() );
-        prelogin->login( "spacechase0", "password" );
+        prelogin->login( username, "password" );
         while ( inPreLogin )
         {
             c.update();
@@ -40,7 +46,7 @@ int main()
             
             if ( status == net::prelogin::LoginStatusCode::NoSuchUser )
             {
-                prelogin->registerUser( "spacechase0", "password" );
+                prelogin->registerUser( username, "password" );
             }
             else if ( status == net::prelogin::LoginStatusCode::LoginFailed )
             {
@@ -49,8 +55,8 @@ int main()
             }
             else if ( status == net::prelogin::RegisterSuccessful )
             {
-                c.log( "[INFO] Registered $.\n", "spacechase0" );
-                prelogin->login( "spacechase0", "password" );
+                c.log( "[INFO] Registered $.\n", username );
+                prelogin->login( username, "password" );
             }
             // LoginSuccessful not checked because the loop should stop by then?
         }

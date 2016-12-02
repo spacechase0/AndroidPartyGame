@@ -2,6 +2,7 @@
 #define NET_MATCH_MATCHSTARTPDATAACKET_HPP
 
 #include "game/MapData.hpp"
+#include "game/PlayerData.hpp"
 #include "net/Packet.hpp"
 
 namespace net
@@ -12,12 +13,13 @@ namespace net
         {
             public:
                 MatchStartDataPacket();
-                MatchStartDataPacket( const game::MapData& theMap );
+                MatchStartDataPacket( const game::MapData& theMap, const std::vector< game::PlayerData >& thePlayers );
                 
                 virtual void read( Buffer& buffer ) override;
                 virtual void write( Buffer& buffer ) const override;
                 
                 game::MapData map;
+                std::vector< game::PlayerData > players;
         };
     }
 }

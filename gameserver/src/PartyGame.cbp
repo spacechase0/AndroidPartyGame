@@ -155,8 +155,10 @@
 		<Unit filename="game/MapData.hpp" />
 		<Unit filename="game/MatchData.cpp" />
 		<Unit filename="game/MatchData.hpp" />
+		<Unit filename="game/PlayerData.cpp" />
+		<Unit filename="game/PlayerData.hpp" />
 		<Unit filename="game/TileData.hpp" />
-		<Unit filename="game/TileData.hpp" />
+		<Unit filename="game/UserData.cpp" />
 		<Unit filename="game/UserData.hpp" />
 		<Unit filename="net/Buffer.cpp" />
 		<Unit filename="net/Buffer.hpp" />

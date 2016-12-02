@@ -38,7 +38,7 @@ namespace server
         
         const Match& NetStage::getMatch() const
         {
-            match;
+            return match;
         }
         
         /*void NetStage::handleRequestMatchList( const net::Packet* packet )

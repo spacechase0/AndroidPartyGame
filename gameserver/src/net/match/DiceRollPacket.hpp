@@ -11,11 +11,12 @@ namespace net
         {
             public:
                 DiceRollPacket();
+                DiceRollPacket( sf::Uint8 theNum );
                 
                 virtual void read( Buffer& buffer ) override;
                 virtual void write( Buffer& buffer ) const override;
                 
-                sf::Uint8 user;
+                //sf::Uint8 user;
                 sf::Uint8 num;
         };
     }

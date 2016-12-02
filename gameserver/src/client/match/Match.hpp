@@ -33,6 +33,11 @@ namespace client
                 
                 void drawBoard( sf::RenderWindow& window );
                 void drawUi( sf::RenderWindow& window );
+                
+                int currentTurn = 0;
+                int myTurn = 0;
+                
+                void onDiceRoll( sf::Uint8 num );
             
             private:
                 Client& client;
@@ -49,7 +54,7 @@ namespace client
                 
                 sf::RectangleShape dieBg;
                 sf::Text dieFg;
-                int dieNum = -1;
+                sf::Uint8 dieNum = 0xFF;
                 bool rollingDie = false;
                 
                 friend class NetStage;

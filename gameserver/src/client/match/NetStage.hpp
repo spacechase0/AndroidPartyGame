@@ -7,6 +7,7 @@
 #include "client/match/Match.hpp"
 #include "game/MapData.hpp"
 #include "game/MatchData.hpp"
+#include "game/PlayerData.hpp"
 #include "net/match/NetStage.hpp"
 
 namespace client
@@ -23,13 +24,18 @@ namespace client
                 Match match;
                 game::MatchData matchInfo;
                 game::MapData map;
+                std::vector< game::PlayerData > players;
                 
                 std::function< void () > onMatchStartData;
+                std::function< void ( sf::Uint8 ) > onDiceRoll;
+                
+                void rollDie();
             
             private:
                 Client& client;
                 
                 void handleMatchStartData( const net::Packet* packet );
+                void handleDiceRoll( const net::Packet* packet );
         };
     }
 }

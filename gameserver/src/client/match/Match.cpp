@@ -18,6 +18,7 @@ namespace client
     namespace match
     {
         using namespace game;
+        using namespace net::match;
         
         Match::Match( Client& theClient, NetStage& theNetStage )
         :   client( theClient ),
@@ -44,7 +45,7 @@ namespace client
         {
             if ( event.type == sf::Event::MouseButtonPressed )
             {
-                if ( dieBg.getGlobalBounds().contains( event.mouseButton.x, event.mouseButton.y ) )
+                if ( currentTurn == myTurn && dieBg.getGlobalBounds().contains( event.mouseButton.x, event.mouseButton.y ) )
                 {
                     rollingDie = true;
                     dieNum = rand() % 6;
@@ -54,7 +55,7 @@ namespace client
             {
                 if ( rollingDie )
                 {
-                    rollingDie = false;
+                    netStage.rollDie();
                 }
             }
         }
@@ -72,19 +73,26 @@ namespace client
         void Match::drawUi( sf::RenderWindow& window )
         {
             dieBg.setPosition( window.getSize().x / 2, 75 );
+            dieBg.setOutlineThickness( currentTurn == myTurn ? 3 : 1 );
             window.draw( dieBg );
-            if ( dieNum != -1 )
+            if ( dieNum != 0xFF )
             {
                 if ( rollingDie )
                 {
                     dieNum = ( dieNum + 1 ) % 6;
                 }
                 
-                dieFg.setString( util::toString( dieNum ) );
+                dieFg.setString( util::toString( static_cast< int >( dieNum ) ) );
                 dieFg.setOrigin( dieFg.getLocalBounds().width / 2, dieFg.getLocalBounds().height / 4 * 3 );
                 dieFg.setPosition( dieBg.getPosition() );
                 window.draw( dieFg );
             }
+        }
+        
+        void Match::onDiceRoll( sf::Uint8 num )
+        {
+            rollingDie = false;
+            dieNum = num;
         }
         
         void Match::makeBoardCache()

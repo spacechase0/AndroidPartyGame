@@ -35,6 +35,8 @@ namespace client
             net::NetStage* getNetStage();
             const net::NetStage* getNetStage() const;
             void setNetStage( std::unique_ptr< net::NetStage > theStage );
+            
+            std::string user;
         
         private:
             net::Connection conn;
