@@ -1,9 +1,12 @@
 #include "client/match/Match.hpp"
 
+#include <cstdlib>
+#include <ctime>
 #include <list>
 #include <SFML/Graphics/CircleShape.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/Vertex.hpp>
+#include <SFML/Window/Event.hpp>
 #include <vector>
 
 #include "client/Client.hpp"
@@ -20,6 +23,40 @@ namespace client
         :   client( theClient ),
             netStage( theNetStage )
         {
+            std::srand( std::time( nullptr ) );
+            
+            font.loadFromFile( "res/dejavu/ttf/DejaVuSans.ttf" );
+            fontMono.loadFromFile( "res/dejavu/ttf/DejaVuSansMono.ttf" );
+            icons.loadFromFile( "res/icons.png" );
+            
+            dieBg.setSize( sf::Vector2f( 80, 80 ) );
+            dieBg.setOrigin( 40, 40 );
+            dieBg.setFillColor( sf::Color( 230, 230, 230 ) );
+            dieBg.setOutlineColor( sf::Color::Black );
+            dieBg.setOutlineThickness( 3.f );
+            
+            dieFg.setFont( font );
+            dieFg.setFillColor( sf::Color::Black );
+            dieFg.setCharacterSize( 50 );
+        }
+        
+        void Match::doEvent( const sf::Event& event )
+        {
+            if ( event.type == sf::Event::MouseButtonPressed )
+            {
+                if ( dieBg.getGlobalBounds().contains( event.mouseButton.x, event.mouseButton.y ) )
+                {
+                    rollingDie = true;
+                    dieNum = rand() % 6;
+                }
+            }
+            else if ( event.type == sf::Event::MouseButtonReleased )
+            {
+                if ( rollingDie )
+                {
+                    rollingDie = false;
+                }
+            }
         }
         
         void Match::drawBoard( sf::RenderWindow& window )
@@ -30,6 +67,24 @@ namespace client
             window.draw( &lines[ 0 ], lines.size(), sf::PrimitiveType::Lines );
             for ( const auto& spot : spots )
                 window.draw( spot );
+        }
+        
+        void Match::drawUi( sf::RenderWindow& window )
+        {
+            dieBg.setPosition( window.getSize().x / 2, 75 );
+            window.draw( dieBg );
+            if ( dieNum != -1 )
+            {
+                if ( rollingDie )
+                {
+                    dieNum = ( dieNum + 1 ) % 6;
+                }
+                
+                dieFg.setString( util::toString( dieNum ) );
+                dieFg.setOrigin( dieFg.getLocalBounds().width / 2, dieFg.getLocalBounds().height / 4 * 3 );
+                dieFg.setPosition( dieBg.getPosition() );
+                window.draw( dieFg );
+            }
         }
         
         void Match::makeBoardCache()
@@ -48,7 +103,7 @@ namespace client
                     shape.setOutlineColor( sf::Color( 0, 0, 0, 50 ) );
                     shape.setOutlineThickness( 1 );
                     shape.setRadius( 20 );
-                    shape.setPosition( ix * 50 + 10, iy * 50 + 10 );
+                    shape.setPosition( ix * GRID_SIZE + 10, iy * GRID_SIZE + 10 );
                     switch ( tile.type )
                     {
                         case TileData::Type::Blue:    shape.setFillColor( sf::Color::Blue  ); break;
@@ -60,8 +115,8 @@ namespace client
                     
                     for ( auto next : tile.next )
                     {
-                        sf::Vertex a( sf::Vector2f( ix * 50 + 30, iy * 50 + 30 ), sf::Color::Black );
-                        sf::Vertex b( sf::Vector2f( next.x * 50 + 30, next.y * 50 + 30 ), sf::Color::White );
+                        sf::Vertex a( sf::Vector2f( ix * GRID_SIZE + 30, iy * GRID_SIZE + 30 ), sf::Color::Black );
+                        sf::Vertex b( sf::Vector2f( next.x * GRID_SIZE + 30, next.y * GRID_SIZE + 30 ), sf::Color::White );
                         lines.push_back( a );
                         lines.push_back( b );
                     }

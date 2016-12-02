@@ -120,6 +120,7 @@ int main()
             sf::Event event;
             while ( window.pollEvent( event ) )
             {
+                match->match.doEvent( event );
                 if ( event.type == sf::Event::Closed )
                     window.close();
             }
@@ -134,12 +135,14 @@ int main()
             window.clear( sf::Color::White );
             
             sf::View view = window.getDefaultView();
-            view.setCenter( match->map.getSize().x * 50 / 2, match->map.getSize().y * 50 / 2 );
+            view.setCenter( match->map.getSize().x * GRID_SIZE / 2, match->map.getSize().y * GRID_SIZE / 2 );
             window.setView( view );
             {
                 match->match.drawBoard( window );
             }
             window.setView( window.getDefaultView() );
+            
+            match->match.drawUi( window );
             
             window.display();
         }
