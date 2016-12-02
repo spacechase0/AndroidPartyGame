@@ -44,7 +44,7 @@ namespace server
         void NetStage::handleDiceRoll( const net::Packet* packet )
         {
             auto req = static_cast< const DiceRollPacket* >( packet );
-            
+            match.playerRolledDie( &client );
         }
     }
 }

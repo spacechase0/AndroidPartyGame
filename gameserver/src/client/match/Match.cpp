@@ -43,7 +43,7 @@ namespace client
         
         void Match::update()
         {
-            if ( dieNum != 0xFF && lastMove.getElapsedTime().asSeconds() >= TIME_MOVE )
+            if ( !rollingDie && dieNum != 0xFF && lastMove.getElapsedTime().asSeconds() >= TIME_MOVE )
             {
                 --dieNum;
                 netStage.players[ currentTurn ].move( netStage.map );
@@ -84,6 +84,21 @@ namespace client
             window.draw( &lines[ 0 ], lines.size(), sf::PrimitiveType::Lines );
             for ( const auto& spot : spots )
                 window.draw( spot );
+            
+            sf::CircleShape p;
+            p.setRadius( GRID_SIZE / 3 / 2 );
+            p.setOutlineColor( sf::Color::Black );
+            p.setOutlineThickness( 1 );
+            p.setOrigin( p.getRadius(), p.getRadius() );
+            
+            int i = 0;
+            for ( const auto& player : netStage.players )
+            {
+                p.setPosition( player.pos.x * GRID_SIZE + ( 1 + i % 2 ) * GRID_SIZE / 3, player.pos.y * GRID_SIZE + ( 1 + i / 2 ) * GRID_SIZE / 3 );
+                p.setFillColor( sf::Color( player.color ) );
+                window.draw( p );
+                ++i;
+            }
         }
         
         void Match::drawUi( sf::RenderWindow& window )
@@ -91,7 +106,7 @@ namespace client
             dieBg.setPosition( window.getSize().x / 2, 75 );
             dieBg.setOutlineThickness( currentTurn == myTurn ? 3 : 1 );
             window.draw( dieBg );
-            if ( dieNum != 0xFF )
+            if ( dieNum != 0 )
             {
                 if ( rollingDie )
                 {

@@ -184,7 +184,7 @@ namespace server
             playerData[ currentTurn ].move( server.maps[ mapId ] );
             server.log("[INFO] $ moved to ($,$)\n", playerData[currentTurn].username,playerData[currentTurn].pos.x, playerData[currentTurn].pos.y);
             
-            if ( roll == 0xFF )
+            if ( roll == 0 )
             {
                 currentTurn = ( currentTurn + 1 ) % playerData.size();
             }
