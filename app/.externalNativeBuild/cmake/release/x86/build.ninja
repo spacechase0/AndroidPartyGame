@@ -32,10 +32,274 @@ include rules.ninja
 # =============================================================================
 # Object build statements for SHARED_LIBRARY target kingdomparty-native
 
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/client/Client.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/client/Client.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\client\Client.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\client\Client.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\client
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/client/lobby/NetStage.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/client/lobby/NetStage.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\client\lobby\NetStage.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\client\lobby\NetStage.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\client\lobby
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/client/main.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/client/main.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\client\main.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\client\main.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\client
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/client/match/Match.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/client/match/Match.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\client\match\Match.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\client\match\Match.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\client\match
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/client/match/NetStage.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/client/match/NetStage.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\client\match\NetStage.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\client\match\NetStage.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\client\match
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/client/prelogin/NetStage.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/client/prelogin/NetStage.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\client\prelogin\NetStage.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\client\prelogin\NetStage.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\client\prelogin
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/game/MapData.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/game/MapData.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\game\MapData.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\game\MapData.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\game
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/game/MatchData.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/game/MatchData.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\game\MatchData.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\game\MatchData.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\game
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/game/PlayerData.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/game/PlayerData.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\game\PlayerData.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\game\PlayerData.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\game
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/game/UserData.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/game/UserData.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\game\UserData.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\game\UserData.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\game
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/Buffer.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/Buffer.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\Buffer.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\Buffer.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/Connection.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/Connection.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\Connection.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\Connection.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/lobby/CreateMatchPacket.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/lobby/CreateMatchPacket.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\lobby\CreateMatchPacket.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\lobby\CreateMatchPacket.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\lobby
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/lobby/JoinMatchPacket.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/lobby/JoinMatchPacket.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\lobby\JoinMatchPacket.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\lobby\JoinMatchPacket.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\lobby
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/lobby/MatchListPacket.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/lobby/MatchListPacket.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\lobby\MatchListPacket.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\lobby\MatchListPacket.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\lobby
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/lobby/MatchStatusPacket.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/lobby/MatchStatusPacket.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\lobby\MatchStatusPacket.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\lobby\MatchStatusPacket.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\lobby
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/lobby/NetStage.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/lobby/NetStage.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\lobby\NetStage.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\lobby\NetStage.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\lobby
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/lobby/RequestMatchListPacket.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/lobby/RequestMatchListPacket.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\lobby\RequestMatchListPacket.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\lobby\RequestMatchListPacket.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\lobby
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/match/DiceRollPacket.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/match/DiceRollPacket.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\match\DiceRollPacket.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\match\DiceRollPacket.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\match
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/match/MatchStartDataPacket.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/match/MatchStartDataPacket.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\match\MatchStartDataPacket.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\match\MatchStartDataPacket.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\match
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/match/MinigameEndPacket.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/match/MinigameEndPacket.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\match\MinigameEndPacket.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\match\MinigameEndPacket.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\match
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/match/MinigameInputDataPacket.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/match/MinigameInputDataPacket.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\match\MinigameInputDataPacket.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\match\MinigameInputDataPacket.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\match
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/match/MinigameStartPacket.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/match/MinigameStartPacket.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\match\MinigameStartPacket.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\match\MinigameStartPacket.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\match
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/match/MinigameStateDataPacket.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/match/MinigameStateDataPacket.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\match\MinigameStateDataPacket.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\match\MinigameStateDataPacket.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\match
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/match/NetStage.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/match/NetStage.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\match\NetStage.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\match\NetStage.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\match
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/match/TurnOrderPacket.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/match/TurnOrderPacket.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\match\TurnOrderPacket.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\match\TurnOrderPacket.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\match
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/NetStage.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/NetStage.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\NetStage.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\NetStage.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/Packet.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/Packet.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\Packet.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\Packet.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/prelogin/LoginPacket.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/prelogin/LoginPacket.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\prelogin\LoginPacket.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\prelogin\LoginPacket.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\prelogin
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/prelogin/LoginStatusPacket.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/prelogin/LoginStatusPacket.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\prelogin\LoginStatusPacket.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\prelogin\LoginStatusPacket.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\prelogin
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/prelogin/NetStage.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/prelogin/NetStage.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\prelogin\NetStage.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\prelogin\NetStage.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\prelogin
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/prelogin/ProtocolVersionPacket.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/prelogin/ProtocolVersionPacket.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\prelogin\ProtocolVersionPacket.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\prelogin\ProtocolVersionPacket.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\prelogin
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/prelogin/RegisterPacket.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/net/prelogin/RegisterPacket.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\prelogin\RegisterPacket.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\net\prelogin\RegisterPacket.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\net\prelogin
 build CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Base64.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/util/Base64.cpp
   DEFINES = -Dkingdomparty_native_EXPORTS
   DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\util\Base64.cpp.o.d
-  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
   INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
   IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\util\Base64.cpp
   OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
@@ -43,7 +307,7 @@ build CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Base64.cpp.o: CXX_COM
 build CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Crc32.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/util/Crc32.cpp
   DEFINES = -Dkingdomparty_native_EXPORTS
   DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\util\Crc32.cpp.o.d
-  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
   INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
   IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\util\Crc32.cpp
   OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
@@ -51,7 +315,7 @@ build CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Crc32.cpp.o: CXX_COMP
 build CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Endian.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/util/Endian.cpp
   DEFINES = -Dkingdomparty_native_EXPORTS
   DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\util\Endian.cpp.o.d
-  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
   INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
   IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\util\Endian.cpp
   OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
@@ -59,7 +323,7 @@ build CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Endian.cpp.o: CXX_COM
 build CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/File.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/util/File.cpp
   DEFINES = -Dkingdomparty_native_EXPORTS
   DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\util\File.cpp.o.d
-  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
   INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
   IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\util\File.cpp
   OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
@@ -67,7 +331,7 @@ build CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/File.cpp.o: CXX_COMPI
 build CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Logger.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/util/Logger.cpp
   DEFINES = -Dkingdomparty_native_EXPORTS
   DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\util\Logger.cpp.o.d
-  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
   INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
   IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\util\Logger.cpp
   OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
@@ -75,7 +339,7 @@ build CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Logger.cpp.o: CXX_COM
 build CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Md5.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/util/Md5.cpp
   DEFINES = -Dkingdomparty_native_EXPORTS
   DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\util\Md5.cpp.o.d
-  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
   INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
   IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\util\Md5.cpp
   OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
@@ -83,11 +347,19 @@ build CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Md5.cpp.o: CXX_COMPIL
 build CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/String.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/util/String.cpp
   DEFINES = -Dkingdomparty_native_EXPORTS
   DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\util\String.cpp.o.d
-  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
   INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
   IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\util\String.cpp
   OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
   OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp\util
+build CMakeFiles/kingdomparty-native.dir/src/main/cpp/Util.cpp.o: CXX_COMPILER__kingdomparty-native ../../../../src/main/cpp/Util.cpp
+  DEFINES = -Dkingdomparty_native_EXPORTS
+  DEP_FILE = CMakeFiles\kingdomparty-native.dir\src\main\cpp\Util.cpp.o.d
+  FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC
+  INCLUDES = -I../../../../src/main/cpp -IC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward
+  IN_ABS = C:\Users\Chase\Desktop\Programming\AndroidPartyGame\app\src\main\cpp\Util.cpp
+  OBJECT_DIR = CMakeFiles\kingdomparty-native.dir
+  OBJECT_FILE_DIR = CMakeFiles\kingdomparty-native.dir\src\main\cpp
 
 # =============================================================================
 # Link build statements for SHARED_LIBRARY target kingdomparty-native
@@ -96,8 +368,8 @@ build CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/String.cpp.o: CXX_COM
 #############################################
 # Link the shared library ..\..\..\..\build\intermediates\cmake\release\obj\x86\libkingdomparty-native.so
 
-build ../../../../build/intermediates/cmake/release/obj/x86/libkingdomparty-native.so: CXX_SHARED_LIBRARY_LINKER__kingdomparty-native CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Base64.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Crc32.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Endian.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/File.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Logger.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Md5.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/String.cpp.o | C$:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/x86/libsfml-main.a C$:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/x86/libsfml-system.so C$:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/x86/libsfml-window.so C$:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/x86/libsfml-graphics.so C$:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/x86/libsfml-audio.so C$:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/x86/libsfml-network.so C$:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/x86/libsfml-activity.so
-  LANGUAGE_COMPILE_FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG
+build ../../../../build/intermediates/cmake/release/obj/x86/libkingdomparty-native.so: CXX_SHARED_LIBRARY_LINKER__kingdomparty-native CMakeFiles/kingdomparty-native.dir/src/main/cpp/client/Client.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/client/lobby/NetStage.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/client/main.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/client/match/Match.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/client/match/NetStage.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/client/prelogin/NetStage.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/game/MapData.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/game/MatchData.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/game/PlayerData.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/game/UserData.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/Buffer.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/Connection.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/lobby/CreateMatchPacket.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/lobby/JoinMatchPacket.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/lobby/MatchListPacket.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/lobby/MatchStatusPacket.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/lobby/NetStage.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/lobby/RequestMatchListPacket.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/match/DiceRollPacket.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/match/MatchStartDataPacket.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/match/MinigameEndPacket.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/match/MinigameInputDataPacket.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/match/MinigameStartPacket.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/match/MinigameStateDataPacket.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/match/NetStage.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/match/TurnOrderPacket.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/NetStage.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/Packet.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/prelogin/LoginPacket.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/prelogin/LoginStatusPacket.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/prelogin/NetStage.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/prelogin/ProtocolVersionPacket.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/net/prelogin/RegisterPacket.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Base64.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Crc32.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Endian.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/File.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Logger.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Md5.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/String.cpp.o CMakeFiles/kingdomparty-native.dir/src/main/cpp/Util.cpp.o | C$:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/x86/libsfml-main.a C$:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/x86/libsfml-system.so C$:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/x86/libsfml-window.so C$:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/x86/libsfml-graphics.so C$:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/x86/libsfml-audio.so C$:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/x86/libsfml-network.so C$:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/x86/libsfml-activity.so
+  LANGUAGE_COMPILE_FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -frtti -fexceptions -include Info.hpp -frtti -fexceptions -O2 -DNDEBUG -O2 -DNDEBUG
   LINK_FLAGS = -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Wl,-z,noexecstack -Qunused-arguments -Wl,-z,relro -Wl,-z,now -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Wl,-z,noexecstack -Qunused-arguments -Wl,-z,relro -Wl,-z,now
   LINK_LIBRARIES = C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/x86/libsfml-main.a -lsfml-system -lsfml-window -lsfml-graphics -lsfml-audio -lsfml-network -lsfml-activity -lm "C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/libgnustl_static.a"
   LINK_PATH = -LC:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/x86

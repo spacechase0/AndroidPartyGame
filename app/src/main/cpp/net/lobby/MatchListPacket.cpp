@@ -3,7 +3,7 @@
 #include "net/Buffer.hpp"
 #include "net/PacketId.hpp"
 
-namespace
+namespace net
 {
     net::Buffer& operator << ( net::Buffer& buffer, const game::MatchData& match )
     {

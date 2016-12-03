@@ -2,7 +2,7 @@
 
 #include <SFML/Config.hpp>
 #ifndef SFML_SYSTEM_WINDOWS
-	//#error Implement proper thread ID code later, or mutex protected ID
+//	#error Implement proper thread ID code later, or mutex protected ID
 #endif
 
 #include <ctime>
@@ -55,7 +55,8 @@ namespace util
 		
 		log( "##### NAME = \"" + name + "\" #####\n" );
 	}
-static int i =0;
+
+	static int i = 0;
 	void Logger::log( const std::string& str )
 	{
 		if ( !threadLogger )

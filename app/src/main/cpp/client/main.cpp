@@ -1,6 +1,7 @@
+#include <cstdlib>
+#include <ctime>
 #include <SFML/System/Sleep.hpp>
 #include <SFML/Graphics.hpp>
-#include <SFML/Main.hpp>
 
 #include "client/Client.hpp"
 #include "client/prelogin/NetStage.hpp"
@@ -12,6 +13,8 @@ using namespace client;
 
 int main()
 {
+    std::srand( std::time( nullptr ) );
+    
     Client c;
     if ( !c.connect() )
     {
@@ -24,8 +27,10 @@ int main()
         bool inPreLogin = true;
         c.onStageChange = [ &inPreLogin ](){ inPreLogin = false; };
         
+        std::string username = "user" + util::toString( rand() );
+        
         client::prelogin::NetStage* prelogin = dynamic_cast< client::prelogin::NetStage* >( c.getNetStage() );
-        prelogin->login( "spacechase0", "password" );
+        prelogin->login( username, "password" );
         while ( inPreLogin )
         {
             c.update();
@@ -41,7 +46,7 @@ int main()
             
             if ( status == net::prelogin::LoginStatusCode::NoSuchUser )
             {
-                prelogin->registerUser( "spacechase0", "password" );
+                prelogin->registerUser( username, "password" );
             }
             else if ( status == net::prelogin::LoginStatusCode::LoginFailed )
             {
@@ -50,8 +55,8 @@ int main()
             }
             else if ( status == net::prelogin::RegisterSuccessful )
             {
-                c.log( "[INFO] Registered $.\n", "spacechase0" );
-                prelogin->login( "spacechase0", "password" );
+                c.log( "[INFO] Registered $.\n", username );
+                prelogin->login( username, "password" );
             }
             // LoginSuccessful not checked because the loop should stop by then?
         }
@@ -74,7 +79,7 @@ int main()
             
             if ( matches.size() == 0 )
             {
-                lobby->createMatch( game::MatchData( "My Match", 2 ) );
+                lobby->createMatch( game::MatchData( "My Match", "test", 2 ) );
                 hosting = true;
             }
             else
@@ -113,7 +118,7 @@ int main()
         if ( match == nullptr )
             c.log( "PROBLEMS!!!" );
         
-        sf::RenderWindow window( sf::VideoMode( 640, 480 ), "Kingdom Party" );
+        sf::RenderWindow window( sf::VideoMode( 400, 800 ), "Kingdom Party" );
         window.setFramerateLimit( 30 );
         
         while ( window.isOpen() )
@@ -121,11 +126,30 @@ int main()
             sf::Event event;
             while ( window.pollEvent( event ) )
             {
+                match->match.doEvent( event );
                 if ( event.type == sf::Event::Closed )
                     window.close();
             }
             
+            c.update();
+            if ( !c.isConnected() )
+            {
+                c.log( "[INFO] Lost connection.\n" );
+                window.close();
+            }
+            match->match.update();
+            
             window.clear( sf::Color::White );
+            
+            sf::View view = window.getDefaultView();
+            view.setCenter( match->map.getSize().x * GRID_SIZE / 2, match->map.getSize().y * GRID_SIZE / 2 );
+            window.setView( view );
+            {
+                match->match.drawBoard( window );
+            }
+            window.setView( window.getDefaultView() );
+            
+            match->match.drawUi( window );
             
             window.display();
         }

@@ -6,8 +6,9 @@ namespace game
     {
     }
     
-    MatchData::MatchData( const std::string& theName, sf::Uint8 thePlayers )
+    MatchData::MatchData( const std::string& theName, const std::string& theMap, sf::Uint8 thePlayers )
     :   name( theName ),
+        map( theMap ),
         maxPlayers( thePlayers )
     {
     }

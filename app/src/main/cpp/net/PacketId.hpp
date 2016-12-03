@@ -19,6 +19,16 @@ namespace net
         CreateMatch,
         JoinMatch,
         MatchStatus,
+        
+        // Match
+        MatchStartData,
+        DiceRoll,
+        TurnOrder,
+        MinigameStart,
+        MinigameInputData,
+        MinigameStateData,
+        MinigameEnd,
+        
     };
 }
 

@@ -1,9 +1,0 @@
-# ninja log v5
-1	1479	0	CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Base64.cpp.o	b707ea7fbc89421c
-204	1492	0	CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/File.cpp.o	cb0893a6b83beea1
-400	1493	0	CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Endian.cpp.o	8b1aa8d3007552ba
-609	1641	0	CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Md5.cpp.o	772991760c9495bf
-1016	1709	0	CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Crc32.cpp.o	34e8839364dd0e5a
-816	1936	0	CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Logger.cpp.o	1074bbe43ebb8af9
-1266	2130	0	CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/String.cpp.o	796a9381742db42c
-2131	3024	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libkingdomparty-native.so	2cfe13432f3b56b6

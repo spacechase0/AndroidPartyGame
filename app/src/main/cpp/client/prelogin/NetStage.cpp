@@ -26,6 +26,7 @@ namespace client
         {
             client.log( "[INFO] Logging in as $.\n", username );
             client.send( LoginPacket( username, password ) );
+            client.user = username;
         }
         
         void NetStage::registerUser( const std::string& username, const std::string& password )
@@ -58,6 +59,7 @@ namespace client
             {
                 client.setNetStage( std::unique_ptr< net::NetStage >( new client::lobby::NetStage( client, conn ) ) );
             }
+            else client.user = "";
         }
     }
 }
