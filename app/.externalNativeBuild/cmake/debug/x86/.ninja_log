@@ -1,0 +1,9 @@
+# ninja log v5
+188	1417	0	CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Crc32.cpp.o	bbaade771b8876db
+564	1467	0	CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Md5.cpp.o	c3c8844729402f94
+374	1565	0	CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Base64.cpp.o	da11323f5686a01a
+962	1892	0	CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/File.cpp.o	e0e99c6a0bddd276
+761	2323	0	CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Endian.cpp.o	bbf77db3f8630168
+1183	2354	0	CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/String.cpp.o	709e215e2040bc9d
+5	897	0	CMakeFiles/kingdomparty-native.dir/src/main/cpp/util/Logger.cpp.o	7ed3df46946f5346
+898	2100	0	../../../../build/intermediates/cmake/debug/obj/x86/libkingdomparty-native.so	4dbff2b76270cdeb

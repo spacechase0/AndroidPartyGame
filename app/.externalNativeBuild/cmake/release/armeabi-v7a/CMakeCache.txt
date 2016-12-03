@@ -184,28 +184,10 @@ Project_BINARY_DIR:STATIC=C:/Users/Chase/Desktop/Programming/AndroidPartyGame/ap
 Project_SOURCE_DIR:STATIC=C:/Users/Chase/Desktop/Programming/AndroidPartyGame/app
 
 //Dependencies for the target
-kingdomparty-native_LIB_DEPENDS:STATIC=general;$(sfsys);general;$(sfwin);general;$(sfgraph);general;$(sfaud);general;$(sfnet);general;$(sfmain);general;$(sfact);
-
-//Path to a library.
-sfact:FILEPATH=sfact-NOTFOUND
-
-//Path to a library.
-sfaud:FILEPATH=sfaud-NOTFOUND
-
-//Path to a library.
-sfgraph:FILEPATH=sfgraph-NOTFOUND
-
-//Path to a library.
-sfmain:FILEPATH=sfmain-NOTFOUND
-
-//Path to a library.
-sfnet:FILEPATH=sfnet-NOTFOUND
+kingdomparty-native_LIB_DEPENDS:STATIC=general;C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/armeabi-v7a/libsfml-main.a;general;C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/armeabi-v7a/libsfml-system.so;general;C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/armeabi-v7a/libsfml-window.so;general;C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/armeabi-v7a/libsfml-graphics.so;general;C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/armeabi-v7a/libsfml-audio.so;general;C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/armeabi-v7a/libsfml-network.so;general;C:/Users/Chase/AppData/Local/Android/sdk/ndk-bundle/sources/sfml/lib/armeabi-v7a/libsfml-activity.so;
 
 //Path to a library.
 sfsys:FILEPATH=sfsys-NOTFOUND
-
-//Path to a library.
-sfwin:FILEPATH=sfwin-NOTFOUND
 
 
 ########################
