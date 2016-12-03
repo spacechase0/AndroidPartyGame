@@ -2,7 +2,7 @@
 
 #include <SFML/Config.hpp>
 #ifndef SFML_SYSTEM_WINDOWS
-	#error Implement proper thread ID code later, or mutex protected ID
+	//#error Implement proper thread ID code later, or mutex protected ID
 #endif
 
 #include <ctime>
@@ -10,7 +10,7 @@
 #include <SFML/System/Lock.hpp>
 #include <stdexcept>
 #include <util/String.hpp>
-#include <windows.h>
+//#include <windows.h>
 
 namespace util
 {
@@ -55,12 +55,12 @@ namespace util
 		
 		log( "##### NAME = \"" + name + "\" #####\n" );
 	}
-
+static int i =0;
 	void Logger::log( const std::string& str )
 	{
 		if ( !threadLogger )
 		{
-			openThreadLog( "thread-" + util::toString( GetCurrentThreadId() ) );
+			openThreadLog( "thread-" + util::toString( i ) );
 		}
 		
 		( * threadLogger )( str );
@@ -77,7 +77,7 @@ namespace util
 		threadLogger = theLog;
 		{
 			sf::Lock lock( threadMutex );
-			threadLoggers.insert( std::make_pair( GetCurrentThreadId(), std::shared_ptr< Logger >( theLog ) ) );
+			threadLoggers.insert( std::make_pair( i++, std::shared_ptr< Logger >( theLog ) ) );
 		}
 	}
 }

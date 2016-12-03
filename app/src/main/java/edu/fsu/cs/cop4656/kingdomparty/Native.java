@@ -7,5 +7,8 @@ public class Native
         System.loadLibrary( "kingdomparty-native" );
     }
 
-    
+    static long makeClient()
+    {
+        return 0;
+    }
 }

@@ -1,5 +1,6 @@
 #include <SFML/System/Sleep.hpp>
 #include <SFML/Graphics.hpp>
+#include <SFML/Main.hpp>
 
 #include "client/Client.hpp"
 #include "client/prelogin/NetStage.hpp"
